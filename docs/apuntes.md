@@ -14,25 +14,6 @@ hide_table_of_contents: true
 **VS Code + GitHub + IA**  
 *Apuntes operativos del curso*
 
-## Índice
-
-<div style={{textAlign: 'left'}}>
-
-- [Bloque 1: Licencia educativa GitHub](#bloque-1)
-- [Bloque 2: Diferencia entre GitHub y VS Code](#bloque-2)
-- [Bloque 3: Instalación y configuración de VS Code (Windows)](#bloque-3)
-- [Bloque 4: Copilot/Chat en VS Code y sincronización con GitHub](#bloque-4)
-- [Bloque 5: Estructura de trabajo con carpetas y Markdown](#bloque-5)
-- [Bloque 6: Instrucciones/Agentes](#bloque-6)
-- [Bloque 7: Estrategia de prompting aplicada a educación](#bloque-7)
-- [Bloque 8: Legislación educativa](#bloque-8)
-- [Bloque 9: Generación de apuntes y recursos](#bloque-9)
-- [Bloque 10: Reutilización del contenido en múltiples formatos](#bloque-10)
-- [Bloque 11: Web de apuntes con Docusaurus](#bloque-11)
-- [Bloque 12: Presentaciones](#bloque-12)
-
-</div>
-
 ## Introducción
 
 ### Objetivos de la sesión
