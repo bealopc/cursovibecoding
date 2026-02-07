@@ -40,12 +40,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .theme-doc-sidebar-container {
-  overflow-y: auto;
+  display: none;
 }
 
-.menu__link {
-  white-space: normal;
-  line-height: 1.35;
+.docMainContainer,
+.docItemCol {
+  max-width: 100% !important;
 }
 
 [data-theme='dark'] {
