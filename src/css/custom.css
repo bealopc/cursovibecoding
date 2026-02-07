@@ -51,6 +51,17 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 100% !important;
 }
 
+.docItemCol,
+.docItemCol___3m9Y,
+.docItemCol___2px9 {
+  max-width: 100% !important;
+  flex: 1 1 100% !important;
+}
+
+.theme-doc-toc-desktop {
+  display: none !important;
+}
+
 .theme-doc-markdown {
   display: block;
 }
