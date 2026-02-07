@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Literata:opsz,wght@7..72,400;7..72,600&display=swap');
 
 :root {
   --ifm-font-family-base: 'Literata', serif;
@@ -39,19 +39,47 @@ h1, h2, h3, h4, h5, h6 {
   color: #fbbf24;
 }
 
+/* ====================================
+   CAMBIO PRINCIPAL: MOSTRAR SIDEBAR IZQUIERDA
+   ==================================== */
+
+/* ELIMINAR estas líneas que ocultaban la sidebar:
 .theme-doc-sidebar-container,
 .docSidebarContainer,
 .sidebar {
   display: none !important;
 }
+*/
 
-.docMainContainer,
-.docItemCol,
-.docItemCol___3m9Y,
-.docItemCol___2px9 {
-  max-width: 100% !important;
-  flex: 1 1 100% !important;
+/* Ahora la sidebar estará visible */
+.theme-doc-sidebar-container {
+  background-color: var(--ifm-background-color);
 }
+
+/* Ajustar el ancho del contenido principal */
+.docMainContainer {
+  max-width: 100% !important;
+}
+
+/* ====================================
+   ELIMINAR LA TERCERA COLUMNA (índice derecho)
+   ==================================== */
+
+/* ELIMINAR todo el código de .theme-doc-markdown con grid */
+/* Ya no necesitamos el grid de 2 columnas en el contenido */
+.theme-doc-markdown {
+  /* Volver al comportamiento normal, sin grid */
+  display: block;
+}
+
+/* OCULTAR el índice personalizado de la derecha */
+.custom-index {
+  display: none !important;
+}
+
+/* ====================================
+   MODO OSCURO
+   ==================================== */
 
 [data-theme='dark'] {
   --ifm-background-color: #0b0f19;
@@ -61,62 +89,15 @@ h1, h2, h3, h4, h5, h6 {
   --ifm-link-hover-color: #f59e0b;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.12);
 }
-.theme-doc-markdown {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 300px;
-  gap: 2rem;
-  align-items: start;
+
+[data-theme='dark'] .theme-doc-sidebar-container {
+  background-color: var(--ifm-background-color);
 }
 
-.theme-doc-markdown > *:not(.custom-index) {
-  grid-column: 1;
-}
+/* ====================================
+   RESPONSIVE
+   ==================================== */
 
-.custom-index {
-  grid-column: 2;
-  position: sticky;
-  top: 5rem;
-  max-height: calc(100vh - 6rem);
-  overflow: auto;
-  padding: 1rem;
-  margin: 0 0 2rem 0;
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
-  background: #f6f3ea;
-}
-
-.custom-index__title {
-  font-weight: 700;
-  margin-bottom: 0.75rem;
-}
-
-.custom-index details {
-  margin-bottom: 0.6rem;
-}
-
-.custom-index summary {
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.custom-index ul {
-  margin: 0.4rem 0 0.8rem 1rem;
-  padding: 0;
-}
-
-.custom-index a {
-  text-decoration: none;
-}
-
-@media (max-width: 1100px) {
-  .theme-doc-markdown {
-    grid-template-columns: 1fr;
-  }
-
-  .custom-index {
-    grid-column: 1;
-    max-height: none;
-    margin: 1rem 0 2rem;
-    border-left: none;
-    border-top: 1px solid rgba(0, 0, 0, 0.08);
-  }
+@media (max-width: 996px) {
+  /* En móvil, la sidebar se oculta automáticamente con el menú hamburguesa */
 }
