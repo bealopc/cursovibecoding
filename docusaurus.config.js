@@ -72,8 +72,8 @@ const config = {
             position: 'left',
             label: 'Apuntes',
           },
-          {to: '/reveal/index.html', label: 'Presentacion', position: 'left'},
-          {to: '/pdf/apuntes.pdf', label: 'PDF', position: 'left'},
+          {href: '/cursovibecoding/reveal/index.html', label: 'Presentacion', position: 'left'},
+          {href: '/cursovibecoding/pdf/apuntes.pdf', label: 'PDF', position: 'left'},
           {
             href: 'https://github.com/bealopc/cursovibecoding',
             label: 'GitHub',
@@ -98,11 +98,11 @@ const config = {
             items: [
               {
                 label: 'Presentacion',
-                to: '/reveal/index.html',
+                href: '/cursovibecoding/reveal/index.html',
               },
               {
                 label: 'PDF',
-                to: '/pdf/apuntes.pdf',
+                href: '/cursovibecoding/pdf/apuntes.pdf',
               },
               {
                 label: 'GitHub',

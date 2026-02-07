@@ -123,13 +123,9 @@ h1, h2, h3, h4, h5, h6 {
   max-width: 100%;
 }
 
-/* Ocultar la tabla de contenidos a la derecha (si existe) */
+/* Mostrar la tabla de contenidos a la derecha */
 .theme-doc-toc-desktop {
-  display: none;
-}
-
-.col--3 {
-  display: none;
+  display: block;
 }
 
 /* ====================================

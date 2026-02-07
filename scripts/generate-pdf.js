@@ -16,6 +16,9 @@ let content = md.replace(/^---[\s\S]*?---\s*/m, '');
 // Remove Docusaurus admonitions like :::tip ... :::
 content = content.replace(/:::[\s\S]*?:::/g, '');
 
+// Remove heading IDs like {#id}
+content = content.replace(/(#{1,6}\\s+.+?)\\s+\\{#[^}]+\\}/g, '$1');
+
 // Create output directory
 fs.mkdirSync(outputDir, { recursive: true });
 

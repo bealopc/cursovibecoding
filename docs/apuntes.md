@@ -1,7 +1,7 @@
 ---
 title: Apuntes y notas personales de Vibe Coding
-hide_sidebar: false
-hide_table_of_contents: true
+hide_sidebar: true
+hide_table_of_contents: false
 toc_min_heading_level: 2
 toc_max_heading_level: 3
 ---
