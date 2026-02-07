@@ -39,13 +39,18 @@ h1, h2, h3, h4, h5, h6 {
   color: #fbbf24;
 }
 
-.theme-doc-sidebar-container {
-  display: none;
+.theme-doc-sidebar-container,
+.docSidebarContainer,
+.sidebar {
+  display: none !important;
 }
 
 .docMainContainer,
-.docItemCol {
+.docItemCol,
+.docItemCol___3m9Y,
+.docItemCol___2px9 {
   max-width: 100% !important;
+  flex: 1 1 100% !important;
 }
 
 [data-theme='dark'] {
