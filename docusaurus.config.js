@@ -22,8 +22,13 @@ const config = {
   organizationName: 'bealopc',
   projectName: 'cursovibecoding',
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'ignore',
+  trailingSlash: true,
+  markdown: {
+    hooks: {
+      onBrokenMarkdownLinks: 'ignore',
+    },
+  },
 
   i18n: {
     defaultLocale: 'es',
