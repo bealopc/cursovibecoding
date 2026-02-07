@@ -61,15 +61,25 @@ h1, h2, h3, h4, h5, h6 {
   --ifm-link-hover-color: #f59e0b;
   --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.12);
 }
+.theme-doc-markdown {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 2rem;
+  align-items: start;
+}
+
+.theme-doc-markdown > *:not(.custom-index) {
+  grid-column: 1;
+}
+
 .custom-index {
+  grid-column: 2;
   position: sticky;
   top: 5rem;
-  float: right;
-  width: 300px;
   max-height: calc(100vh - 6rem);
   overflow: auto;
   padding: 1rem;
-  margin: 0 0 2rem 2rem;
+  margin: 0 0 2rem 0;
   border-left: 1px solid rgba(0, 0, 0, 0.08);
   background: #f6f3ea;
 }
@@ -98,9 +108,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (max-width: 1100px) {
+  .theme-doc-markdown {
+    grid-template-columns: 1fr;
+  }
+
   .custom-index {
-    float: none;
-    width: 100%;
+    grid-column: 1;
     max-height: none;
     margin: 1rem 0 2rem;
     border-left: none;
