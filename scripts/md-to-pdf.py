@@ -79,6 +79,28 @@ class MarkdownToPDF:
             spaceBefore=12,
             fontName='Helvetica-Bold'
         ))
+
+        # Estilo para encabezados H4
+        self.styles.add(ParagraphStyle(
+            name='CustomHeading4',
+            parent=self.styles['Heading4'],
+            fontSize=11,
+            textColor=HexColor('#5f6a6a'),
+            spaceAfter=6,
+            spaceBefore=10,
+            fontName='Helvetica-Bold'
+        ))
+
+        # Estilo para encabezados H5
+        self.styles.add(ParagraphStyle(
+            name='CustomHeading5',
+            parent=self.styles['Heading5'],
+            fontSize=10,
+            textColor=HexColor('#6e7b7b'),
+            spaceAfter=4,
+            spaceBefore=8,
+            fontName='Helvetica-Bold'
+        ))
         
         # Estilo para texto normal
         self.styles.add(ParagraphStyle(
@@ -151,7 +173,7 @@ class MarkdownToPDF:
         
         in_list = False
         list_items = []
-        
+
         while i < len(lines):
             line = lines[i]
             
@@ -176,6 +198,53 @@ class MarkdownToPDF:
                 code_block.append(line)
                 i += 1
                 continue
+
+            # Tablas Markdown
+            if '|' in line and i + 1 < len(lines):
+                sep_line = lines[i + 1]
+                if re.match(r'^\s*\|?\s*[-:| ]+\|?\s*$', sep_line):
+                    if in_list and list_items:
+                        story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
+                        story.append(Spacer(1, 6))
+                        list_items = []
+                        in_list = False
+
+                    def split_row(row):
+                        row = row.strip()
+                        if row.startswith('|'):
+                            row = row[1:]
+                        if row.endswith('|'):
+                            row = row[:-1]
+                        return [cell.strip() for cell in row.split('|')]
+
+                    header = split_row(line)
+                    rows = []
+                    j = i + 2
+                    while j < len(lines) and '|' in lines[j] and lines[j].strip():
+                        rows.append(split_row(lines[j]))
+                        j += 1
+
+                    data = [header] + rows
+                    table_data = [
+                        [Paragraph(self._process_inline_markdown(cell), self.styles['CustomBody']) for cell in row]
+                        for row in data
+                    ]
+                    table = Table(table_data, hAlign='LEFT')
+                    table.setStyle(TableStyle([
+                        ('BACKGROUND', (0, 0), (-1, 0), HexColor('#f0f3f4')),
+                        ('TEXTCOLOR', (0, 0), (-1, 0), HexColor('#2c3e50')),
+                        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                        ('GRID', (0, 0), (-1, -1), 0.5, HexColor('#d5d8dc')),
+                        ('VALIGN', (0, 0), (-1, -1), 'TOP'),
+                        ('LEFTPADDING', (0, 0), (-1, -1), 6),
+                        ('RIGHTPADDING', (0, 0), (-1, -1), 6),
+                        ('TOPPADDING', (0, 0), (-1, -1), 4),
+                        ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
+                    ]))
+                    story.append(table)
+                    story.append(Spacer(1, 8))
+                    i = j
+                    continue
             
             # Saltar líneas vacías
             if not line.strip():
@@ -223,6 +292,26 @@ class MarkdownToPDF:
                     
                 text = line[4:].strip()
                 story.append(Paragraph(text, self.styles['CustomHeading3']))
+
+            elif line.startswith('#### '):
+                if in_list and list_items:
+                    story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
+                    story.append(Spacer(1, 6))
+                    list_items = []
+                    in_list = False
+                    
+                text = line[5:].strip()
+                story.append(Paragraph(text, self.styles['CustomHeading4']))
+
+            elif line.startswith('##### '):
+                if in_list and list_items:
+                    story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
+                    story.append(Spacer(1, 6))
+                    list_items = []
+                    in_list = False
+                    
+                text = line[6:].strip()
+                story.append(Paragraph(text, self.styles['CustomHeading5']))
             
             # Separadores horizontales
             elif line.strip() in ['---', '***', '___']:

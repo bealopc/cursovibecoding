@@ -50,6 +50,73 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ====================================
+   ÍNDICE PERSONALIZADO A LA IZQUIERDA
+   ==================================== */
+
+/* Ocultar la sidebar de Docusaurus y el TOC derecho */
+.theme-doc-sidebar-container,
+.theme-doc-toc-desktop {
+  display: none !important;
+}
+
+.custom-index {
+  float: left;
+  width: 320px;
+  max-height: calc(100vh - 6rem);
+  overflow: auto;
+  padding: 1rem;
+  margin: 0 2rem 2rem 0;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--ifm-background-color);
+  position: sticky;
+  top: 5rem;
+}
+
+.theme-doc-markdown::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.custom-index__title {
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.custom-index summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.custom-index details {
+  margin-bottom: 0.6rem;
+}
+
+.custom-index__item {
+  margin: 0.35rem 0 0.35rem 0.75rem;
+}
+
+.custom-index ul {
+  margin: 0.4rem 0 0.8rem 1.25rem;
+  padding: 0;
+}
+
+.custom-index a {
+  text-decoration: none;
+}
+
+@media (max-width: 1100px) {
+  .custom-index {
+    float: none;
+    width: 100%;
+    max-height: none;
+    margin: 1rem 0 2rem;
+    border-right: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* ====================================
    TABLA DE CONTENIDOS (TOC) EN SIDEBAR
    ==================================== */
 
