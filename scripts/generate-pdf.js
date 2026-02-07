@@ -1,11 +1,13 @@
-﻿const fs = require('fs');
+const fs = require('fs');
 const path = require('path');
-const PDFDocument = require('pdfkit');
+const { spawn } = require('child_process');
 
 const input = path.join(__dirname, '..', 'docs', 'apuntes.md');
 const outputDir = path.join(__dirname, '..', 'static', 'pdf');
 const output = path.join(outputDir, 'apuntes.pdf');
+const pythonScript = path.join(__dirname, 'md-to-pdf.py');
 
+// Read and process markdown
 const md = fs.readFileSync(input, 'utf8');
 
 // Strip frontmatter
@@ -14,45 +16,34 @@ let content = md.replace(/^---[\s\S]*?---\s*/m, '');
 // Remove Docusaurus admonitions like :::tip ... :::
 content = content.replace(/:::[\s\S]*?:::/g, '');
 
-function mdToText(s) {
-  return s
-    .replace(/```[\s\S]*?```/g, '')
-    .replace(/`([^`]+)`/g, '$1')
-    .replace(/<[^>]+>/g, '') // strip HTML tags
-    .replace(/^#+\s+/gm, '')
-    .replace(/^>\s?/gm, '')
-    .replace(/^\s*[-*+]\s+/gm, '• ')
-    .replace(/^\s*\d+\.\s+/gm, '• ')
-    .replace(/\|/g, ' ')
-    .replace(/\s{2,}/g, ' ')
-    .replace(/\n{3,}/g, '\n\n');
-}
-
-const text = mdToText(content);
-
+// Create output directory
 fs.mkdirSync(outputDir, { recursive: true });
 
-const doc = new PDFDocument({
-  size: 'A4',
-  margin: 50
+// Create temporary markdown file for Python to process
+const tempMd = path.join(outputDir, 'temp_apuntes.md');
+fs.writeFileSync(tempMd, content, 'utf8');
+
+// Call Python script to generate PDF
+const python = spawn('python3', [pythonScript, tempMd, output]);
+
+python.stdout.on('data', (data) => {
+  console.log(data.toString());
 });
 
-doc.info.Title = 'Apuntes Vibe Coding';
+python.stderr.on('data', (data) => {
+  console.error(data.toString());
+});
 
-const stream = fs.createWriteStream(output);
-doc.pipe(stream);
-
-// Title
-const lines = text.split('\n').filter((l) => l.trim() !== '');
-const title = lines.shift() || 'Apuntes Vibe Coding';
-
-doc.fontSize(20).text(title, { align: 'center' });
-doc.moveDown();
-
-doc.fontSize(11).text(lines.join('\n'));
-
-doc.end();
-
-stream.on('finish', () => {
-  console.log(output);
+python.on('close', (code) => {
+  // Clean up temp file
+  if (fs.existsSync(tempMd)) {
+    fs.unlinkSync(tempMd);
+  }
+  
+  if (code === 0) {
+    console.log(`✓ PDF generado exitosamente: ${output}`);
+  } else {
+    console.error(`✗ Error al generar PDF (código ${code})`);
+    process.exit(code);
+  }
 });
