@@ -316,3 +316,59 @@ h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
 [data-theme='dark'] .theme-doc-sidebar-container::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
 }
+
+/* ====================================
+   AVISO INICIAL
+   ==================================== */
+
+.disclaimer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.disclaimer-card {
+  max-width: 720px;
+  width: 100%;
+  background: #fdfbf7;
+  color: #0f172a;
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+}
+
+.disclaimer-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.disclaimer-card p {
+  margin: 0 0 0.75rem 0;
+  line-height: 1.5;
+}
+
+.disclaimer-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.disclaimer-button {
+  background: #0f172a;
+  color: #fdfbf7;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.disclaimer-button:hover {
+  background: #1f2a44;
+}
