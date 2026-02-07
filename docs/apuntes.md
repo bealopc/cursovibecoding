@@ -1,18 +1,5 @@
 ---
 title: Apuntes y notas personales de VIbe Coding
-sidebar_position: 1
-hide_table_of_contents: true
----
-
-:::tip Descargas
-- [PDF de apuntes](/cursovibecoding/pdf/apuntes.pdf)
-- [Presentacion Reveal.js](/cursovibecoding/reveal/index.html)
-:::
-
-# Vibe Coding para Docentes
-
-**VS Code + GitHub + IA**  
-*Apuntes operativos del curso*
 
 ## Introducción
 
@@ -742,8 +729,6 @@ La IA: crea scripts/build-pdf.py, o comandos npm equivalentes.
 El PDF se genera automáticamente en el flujo de build.
 
 ### Fase 9: Configurar GitHub Pages con IA
-
-PROMPT CLAVE (ESTE ERA EL QUE FALTABA EN LOS APUNTES):
 
 "Configura el proyecto para que se despliegue automáticamente en GitHub Pages usando GitHub Actions. Crea el workflow necesario en .github/workflows/deploy.yml. El despliegue debe ejecutarse en cada push a main."
 
