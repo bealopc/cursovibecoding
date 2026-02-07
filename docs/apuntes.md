@@ -532,7 +532,7 @@ Comprobar saltos de diapositiva
 
 Verificar fuentes
 
-### Problemas frecuentes y soluciones (FAQ)
+### Problemas frecuentes y soluciones (FAQ) {#faq}
 
 | Problema | Solución |
 | --- | --- |
@@ -542,7 +542,7 @@ Verificar fuentes
 | Cambios en Git se complican | Empezar por flujos simples; aceptar que los conflictos existen; pedir ayuda o usar IA con cautela; revisar antes de aprobar acciones |
 | La IA mezcla contextos de chats | Separar sesiones (agentes/chats) por proyecto o propósito; usar instrucciones claras de qué debe ignorar |
 
-## Checklist final de trabajo recomendado
+## Checklist final de trabajo recomendado {#checklist-final}
 
 Crear cuenta GitHub y añadir/verificar correos necesarios
 
@@ -570,7 +570,7 @@ Para figuras/gráficas: generar con Python + librerías, guardar y enlazar desde
 
 Para presentaciones: elegir herramienta según objetivo (Canva/Gamma/NotebookLM o Reveal.js)
 
-## Glosario de términos y siglas
+## Glosario de términos y siglas {#glosario}
 
 | Término | Definición |
 | --- | --- |
@@ -591,7 +591,7 @@ Para presentaciones: elegir herramienta según objetivo (Canva/Gamma/NotebookLM 
 | Fork | Variante de un proyecto basada en otro (Antigravity como 'fork' de VS Code) |
 | Canvas | Interfaz de creación/edición visual desde chat (ChatGPT/Gemini/Claude) |
 
-## Ejercicio guiado: Creación completa de una web de apuntes
+## Ejercicio guiado: Creación completa de una web de apuntes {#ejercicio-guiado}
 
 CREACIÓN COMPLETA DE UNA WEB DE APUNTES CON GITHUB PAGES, DOCUSAURUS, REVEAL.JS Y PDF USANDO IA DESDE VS CODE
 

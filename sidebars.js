@@ -81,6 +81,26 @@ const sidebars = {
       label: 'Bloque 12: Presentaciones',
       href: '/docs/apuntes#bloque-12',
     },
+    {
+      type: 'link',
+      label: 'Problemas frecuentes y soluciones (FAQ)',
+      href: '/docs/apuntes#faq',
+    },
+    {
+      type: 'link',
+      label: 'Checklist final de trabajo recomendado',
+      href: '/docs/apuntes#checklist-final',
+    },
+    {
+      type: 'link',
+      label: 'Glosario de términos y siglas',
+      href: '/docs/apuntes#glosario',
+    },
+    {
+      type: 'link',
+      label: 'Ejercicio guiado: Creación completa de una web de apuntes',
+      href: '/docs/apuntes#ejercicio-guiado',
+    },
   ],
 
   // But you can create a sidebar manually

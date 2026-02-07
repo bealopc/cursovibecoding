@@ -39,6 +39,15 @@ h1, h2, h3, h4, h5, h6 {
   color: #fbbf24;
 }
 
+.theme-doc-sidebar-container {
+  overflow-y: auto;
+}
+
+.menu__link {
+  white-space: normal;
+  line-height: 1.35;
+}
+
 [data-theme='dark'] {
   --ifm-background-color: #0b0f19;
   --ifm-navbar-background-color: #0b0f19;
