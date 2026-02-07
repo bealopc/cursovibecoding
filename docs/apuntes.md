@@ -1,5 +1,5 @@
 ---
-title: Apuntes Vibe Coding
+title: Apuntes y notas personales de VIbe Coding
 sidebar_position: 1
 ---
 
@@ -15,6 +15,8 @@ sidebar_position: 1
 
 ## Índice
 
+<div style="text-align: left">
+
 - [Bloque 1: Licencia educativa GitHub](#bloque-1)
 - [Bloque 2: Diferencia entre GitHub y VS Code](#bloque-2)
 - [Bloque 3: Instalación y configuración de VS Code (Windows)](#bloque-3)
@@ -27,6 +29,8 @@ sidebar_position: 1
 - [Bloque 10: Reutilización del contenido en múltiples formatos](#bloque-10)
 - [Bloque 11: Web de apuntes con Docusaurus](#bloque-11)
 - [Bloque 12: Presentaciones](#bloque-12)
+
+</div>
 
 ## Introducción
 
