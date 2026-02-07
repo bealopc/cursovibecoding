@@ -180,6 +180,21 @@ class MarkdownToPDF:
         
         in_list = False
         list_items = []
+        pending = []
+
+        def flush_pending():
+            nonlocal pending
+            if pending:
+                story.extend(pending)
+                pending = []
+
+        def add_flowable(flowable, satisfy_pending=True):
+            nonlocal pending
+            if pending and satisfy_pending:
+                story.append(KeepTogether(pending + [flowable]))
+                pending = []
+            else:
+                story.append(flowable)
 
         while i < len(lines):
             line = lines[i]
@@ -189,8 +204,8 @@ class MarkdownToPDF:
                 if in_code_block:
                     # Fin del bloque de código
                     code_text = '\n'.join(code_block)
-                    story.append(Preformatted(code_text, self.styles['CodeBlock']))
-                    story.append(Spacer(1, 6))
+                    add_flowable(Preformatted(code_text, self.styles['CodeBlock']))
+                    add_flowable(Spacer(1, 6), satisfy_pending=False)
                     code_block = []
                     in_code_block = False
                     code_lang = None
@@ -211,8 +226,8 @@ class MarkdownToPDF:
                 sep_line = lines[i + 1]
                 if re.match(r'^\s*\|?\s*[-:| ]+\|?\s*$', sep_line):
                     if in_list and list_items:
-                        story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
-                        story.append(Spacer(1, 6))
+                        add_flowable(ListFlowable(list_items, bulletType='bullet', leftIndent=16))
+                        add_flowable(Spacer(1, 6), satisfy_pending=False)
                         list_items = []
                         in_list = False
 
@@ -248,8 +263,8 @@ class MarkdownToPDF:
                         ('TOPPADDING', (0, 0), (-1, -1), 4),
                         ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
                     ]))
-                    story.append(table)
-                    story.append(Spacer(1, 8))
+                    add_flowable(table)
+                    add_flowable(Spacer(1, 8), satisfy_pending=False)
                     i = j
                     continue
             
@@ -258,79 +273,87 @@ class MarkdownToPDF:
                 if in_list:
                     # Terminar lista
                     if list_items:
-                        story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
-                        story.append(Spacer(1, 6))
+                        add_flowable(ListFlowable(list_items, bulletType='bullet', leftIndent=16))
+                        add_flowable(Spacer(1, 6), satisfy_pending=False)
                         list_items = []
                     in_list = False
                 else:
-                    story.append(Spacer(1, 6))
+                    if not pending:
+                        story.append(Spacer(1, 6))
                 i += 1
                 continue
             
             # Encabezados
             if line.startswith('# '):
                 if in_list and list_items:
-                    story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
-                    story.append(Spacer(1, 6))
+                    add_flowable(ListFlowable(list_items, bulletType='bullet', leftIndent=16))
+                    add_flowable(Spacer(1, 6), satisfy_pending=False)
                     list_items = []
                     in_list = False
                 
                 text = line[2:].strip()
-                story.append(Paragraph(text, self.styles['CustomHeading1']))
-                story.append(HRFlowable(width="100%", thickness=2, color=HexColor('#3498db'), 
-                                       spaceAfter=12, spaceBefore=0))
+                flush_pending()
+                pending = [
+                    Paragraph(text, self.styles['CustomHeading1']),
+                    HRFlowable(width="100%", thickness=2, color=HexColor('#3498db'),
+                               spaceAfter=12, spaceBefore=0)
+                ]
                 
             elif line.startswith('## '):
                 if in_list and list_items:
-                    story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
-                    story.append(Spacer(1, 6))
+                    add_flowable(ListFlowable(list_items, bulletType='bullet', leftIndent=16))
+                    add_flowable(Spacer(1, 6), satisfy_pending=False)
                     list_items = []
                     in_list = False
                     
                 text = line[3:].strip()
-                story.append(Paragraph(text, self.styles['CustomHeading2']))
+                flush_pending()
+                pending = [Paragraph(text, self.styles['CustomHeading2'])]
                 
             elif line.startswith('### '):
                 if in_list and list_items:
-                    story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
-                    story.append(Spacer(1, 6))
+                    add_flowable(ListFlowable(list_items, bulletType='bullet', leftIndent=16))
+                    add_flowable(Spacer(1, 6), satisfy_pending=False)
                     list_items = []
                     in_list = False
                     
                 text = line[4:].strip()
-                story.append(Paragraph(text, self.styles['CustomHeading3']))
+                flush_pending()
+                pending = [Paragraph(text, self.styles['CustomHeading3'])]
 
             elif line.startswith('#### '):
                 if in_list and list_items:
-                    story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
-                    story.append(Spacer(1, 6))
+                    add_flowable(ListFlowable(list_items, bulletType='bullet', leftIndent=16))
+                    add_flowable(Spacer(1, 6), satisfy_pending=False)
                     list_items = []
                     in_list = False
                     
                 text = line[5:].strip()
-                story.append(Paragraph(text, self.styles['CustomHeading4']))
+                flush_pending()
+                pending = [Paragraph(text, self.styles['CustomHeading4'])]
 
             elif line.startswith('##### '):
                 if in_list and list_items:
-                    story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
-                    story.append(Spacer(1, 6))
+                    add_flowable(ListFlowable(list_items, bulletType='bullet', leftIndent=16))
+                    add_flowable(Spacer(1, 6), satisfy_pending=False)
                     list_items = []
                     in_list = False
                     
                 text = line[6:].strip()
-                story.append(Paragraph(text, self.styles['CustomHeading5']))
+                flush_pending()
+                pending = [Paragraph(text, self.styles['CustomHeading5'])]
             
             # Separadores horizontales
             elif line.strip() in ['---', '***', '___']:
                 if in_list and list_items:
-                    story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
-                    story.append(Spacer(1, 6))
+                    add_flowable(ListFlowable(list_items, bulletType='bullet', leftIndent=16))
+                    add_flowable(Spacer(1, 6), satisfy_pending=False)
                     list_items = []
                     in_list = False
                     
-                story.append(Spacer(1, 12))
-                story.append(HRFlowable(width="80%", thickness=1, color=HexColor('#bdc3c7'), 
-                                       spaceAfter=12, spaceBefore=12))
+                add_flowable(Spacer(1, 12), satisfy_pending=False)
+                add_flowable(HRFlowable(width="80%", thickness=1, color=HexColor('#bdc3c7'),
+                                       spaceAfter=12, spaceBefore=12), satisfy_pending=False)
             
             # Listas
             elif re.match(r'^\s*[-*+]\s+', line) or re.match(r'^\s*\d+\.\s+', line):
@@ -344,25 +367,25 @@ class MarkdownToPDF:
             # Citas (blockquote)
             elif line.startswith('> '):
                 if in_list and list_items:
-                    story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
-                    story.append(Spacer(1, 6))
+                    add_flowable(ListFlowable(list_items, bulletType='bullet', leftIndent=16))
+                    add_flowable(Spacer(1, 6), satisfy_pending=False)
                     list_items = []
                     in_list = False
                     
                 text = line[2:].strip()
                 text = self._process_inline_markdown(text)
-                story.append(Paragraph(text, self.styles['CustomQuote']))
+                add_flowable(Paragraph(text, self.styles['CustomQuote']))
             
             # Código inline (línea completa)
             elif line.strip().startswith('`') and line.strip().endswith('`'):
                 if in_list and list_items:
-                    story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
-                    story.append(Spacer(1, 6))
+                    add_flowable(ListFlowable(list_items, bulletType='bullet', leftIndent=16))
+                    add_flowable(Spacer(1, 6), satisfy_pending=False)
                     list_items = []
                     in_list = False
                     
                 text = line.strip()[1:-1]
-                story.append(Paragraph(text, self.styles['CustomCode']))
+                add_flowable(Paragraph(text, self.styles['CustomCode']))
             
             # Texto normal
             else:
@@ -374,13 +397,15 @@ class MarkdownToPDF:
                                                   leftIndent=0, bulletColor=HexColor('#3498db')))
                 else:
                     text = self._process_inline_markdown(line)
-                    story.append(Paragraph(text, self.styles['CustomBody']))
+                    add_flowable(Paragraph(text, self.styles['CustomBody']))
             
             i += 1
         
         # Cerrar lista si queda abierta
         if in_list and list_items:
-            story.append(ListFlowable(list_items, bulletType='bullet', leftIndent=20))
+            add_flowable(ListFlowable(list_items, bulletType='bullet', leftIndent=16))
+
+        flush_pending()
         
         return story
     

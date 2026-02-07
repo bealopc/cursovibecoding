@@ -152,6 +152,8 @@ toc_max_heading_level: 3
   </details>
 </div>
 
+<div className="custom-content">
+
 ## Introducción {#introduccion}
 
 ### Objetivos de la sesión {#objetivos-sesion}
@@ -1102,3 +1104,5 @@ Un proyecto que:
 - ✅ Genera PDF
 - ✅ Se mantiene automáticamente
 - ✅ Puede reutilizarse cada curso
+
+</div>

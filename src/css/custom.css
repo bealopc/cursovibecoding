@@ -83,6 +83,11 @@ h1, h2, h3, h4, h5, h6 {
   top: 5rem;
 }
 
+.custom-content {
+  grid-column: 2;
+  min-width: 0;
+}
+
 .custom-index__title {
   font-weight: 700;
   margin-bottom: 0.75rem;
@@ -91,6 +96,15 @@ h1, h2, h3, h4, h5, h6 {
 .custom-index summary {
   cursor: pointer;
   font-weight: 600;
+  list-style: none;
+  padding: 0.55rem 0.75rem;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  border-radius: 8px;
+  background: #e9f6ff;
+}
+
+.custom-index summary::marker {
+  display: none;
 }
 
 .custom-index details {
@@ -98,7 +112,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .custom-index__item {
-  margin: 0.35rem 0 0.35rem 0.75rem;
+  margin: 0.35rem 0 0.35rem 0;
+}
+
+.custom-index__item a {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(15, 23, 42, 0.2);
+  border-radius: 8px;
+  background: #e9f6ff;
 }
 
 .custom-index ul {

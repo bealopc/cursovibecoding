@@ -38,6 +38,10 @@ for (const line of lines) {
 }
 content = cleaned.join('\n');
 
+// Remove custom content wrapper lines
+content = content.replace(/^\s*<div className="custom-content">\s*$/gm, '');
+content = content.replace(/^\s*<\/div>\s*$/gm, '');
+
 // Remove heading IDs like {#id} anywhere
 content = content.replace(/\s*\\{#[^}]+\\}/g, '');
 
