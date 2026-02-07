@@ -371,7 +371,7 @@ class MarkdownToPDF:
         # Generar PDF
         doc.build(story, onFirstPage=self.add_header_footer, onLaterPages=self.add_header_footer)
         
-        print(f"✓ PDF generado: {self.output_file}")
+        print(f"PDF generado: {self.output_file}")
 
 
 def main():

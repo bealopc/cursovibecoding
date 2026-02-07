@@ -24,7 +24,10 @@ const tempMd = path.join(outputDir, 'temp_apuntes.md');
 fs.writeFileSync(tempMd, content, 'utf8');
 
 // Call Python script to generate PDF
-const python = spawn('python3', [pythonScript, tempMd, output]);
+const isWindows = process.platform === 'win32';
+const pythonCmd = isWindows ? 'py' : 'python3';
+const pythonArgs = isWindows ? ['-3', pythonScript, tempMd, output] : [pythonScript, tempMd, output];
+const python = spawn(pythonCmd, pythonArgs);
 
 python.stdout.on('data', (data) => {
   console.log(data.toString());
