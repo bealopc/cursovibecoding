@@ -4,8 +4,8 @@ sidebar_position: 1
 ---
 
 :::tip Descargas
-- [PDF de apuntes](/pdf/apuntes.pdf)
-- [Presentacion Reveal.js](/reveal/index.html)
+- [PDF de apuntes](/cursovibecoding/pdf/apuntes.pdf)
+- [Presentacion Reveal.js](/cursovibecoding/reveal/index.html)
 :::
 
 # Vibe Coding para Docentes

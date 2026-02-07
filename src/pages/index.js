@@ -1,11 +1,14 @@
 ﻿import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Layout from '@theme/Layout';
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
 
 function Hero() {
   const {siteConfig} = useDocusaurusContext();
+  const pdfUrl = useBaseUrl('/pdf/apuntes.pdf');
+  const revealUrl = useBaseUrl('/reveal/index.html');
   return (
     <header className={styles.hero}>
       <div className={styles.heroGrid}>
@@ -22,12 +25,12 @@ function Hero() {
             <Link className={styles.ctaPrimary} to="/docs/apuntes">
               Ver apuntes
             </Link>
-            <Link className={styles.ctaGhost} to="/reveal/index.html">
+            <a className={styles.ctaGhost} href={revealUrl}>
               Ver presentacion
-            </Link>
-            <Link className={styles.ctaGhost} to="/pdf/apuntes.pdf">
+            </a>
+            <a className={styles.ctaGhost} href={pdfUrl}>
               Descargar PDF
-            </Link>
+            </a>
           </div>
           <div className={styles.heroMeta}>
             GitHub Pages · Docusaurus · Reveal.js · Markdown
@@ -52,6 +55,8 @@ function Hero() {
 
 export default function Home() {
   const {siteConfig} = useDocusaurusContext();
+  const pdfUrl = useBaseUrl('/pdf/apuntes.pdf');
+  const revealUrl = useBaseUrl('/reveal/index.html');
   return (
     <Layout
       title={siteConfig.title}
@@ -81,18 +86,18 @@ export default function Home() {
               <div className={styles.featureText}>
                 Descarga directa para compartir o imprimir.
               </div>
-              <Link className={styles.cardLink} to="/pdf/apuntes.pdf">
+              <a className={styles.cardLink} href={pdfUrl}>
                 Descargar PDF
-              </Link>
+              </a>
             </div>
             <div className={styles.featureCard}>
               <div className={styles.featureTitle}>Reveal.js</div>
               <div className={styles.featureText}>
                 Presentacion web lista para aula.
               </div>
-              <Link className={styles.cardLink} to="/reveal/index.html">
+              <a className={styles.cardLink} href={revealUrl}>
                 Abrir presentacion
-              </Link>
+              </a>
             </div>
           </div>
         </section>
@@ -142,12 +147,12 @@ export default function Home() {
             <Link className={styles.quickBtn} to="/docs/apuntes">
               Abrir apuntes
             </Link>
-            <Link className={styles.quickBtn} to="/reveal/index.html">
+            <a className={styles.quickBtn} href={revealUrl}>
               Iniciar presentacion
-            </Link>
-            <Link className={styles.quickBtn} to="/pdf/apuntes.pdf">
+            </a>
+            <a className={styles.quickBtn} href={pdfUrl}>
               Descargar PDF
-            </Link>
+            </a>
             <a className={styles.quickBtn} href="https://github.com/bealopc/cursovibecoding">
               Ver repositorio
             </a>
