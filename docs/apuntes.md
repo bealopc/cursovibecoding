@@ -3,11 +3,351 @@ title: Apuntes y notas personales de Vibe Coding
 hide_sidebar: true
 toc_min_heading_level: 2
 toc_max_heading_level: 3
+hide_table_of_contents: true
 ---
+
 
 # Apuntes y notas personales de Vibe Coding
 
-## Introducción
+
+
+
+<div className="custom-index">
+  <div className="custom-index__title">&Iacute;ndice</div>
+  <details>
+    <summary>Introducci&oacute;n</summary>
+    <details><summary><a href="#objetivos-sesion">Objetivos de la sesi&oacute;n</a></summary></details>
+  </details>
+  <details>
+    <summary>Mapa general de herramientas y conceptos</summary>
+    <details><summary><a href="#herramientas-principales">Herramientas principales</a></summary></details>
+    <details><summary><a href="#ecosistema-licencias">Ecosistema y licencias</a></summary></details>
+    <details><summary><a href="#alternativas-complementarias">Alternativas y herramientas complementarias</a></summary></details>
+  </details>
+  <details>
+    <summary>Apuntes y notas de teor&iacute;a (Bloques 1 a 12)</summary>
+    <details>
+      <summary><a href="#bloque-1">Bloque 1: Licencia educativa GitHub</a></summary>
+      <ul>
+        <li><a href="#b1-requisitos">Requisitos</a></li>
+        <li><a href="#b1-errores">Errores t&iacute;picos observados</a></li>
+        <li><a href="#b1-checklist">Checklist de verificaci&oacute;n</a></li>
+        <li><a href="#b1-estrategias">Estrategias si no funciona</a></li>
+      </ul>
+    </details>
+    <details><summary><a href="#bloque-2">Bloque 2: Diferencia entre GitHub y VS Code</a></summary></details>
+    <details>
+      <summary><a href="#bloque-3">Bloque 3: Instalaci&oacute;n y configuraci&oacute;n de VS Code (Windows)</a></summary>
+      <ul>
+        <li><a href="#b3-pasos">Pasos de instalaci&oacute;n</a></li>
+        <li><a href="#b3-open">Opciones recomendadas (Open with Code)</a></li>
+        <li><a href="#b3-autosave">Configuraci&oacute;n &uacute;til: Auto Save</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-4">Bloque 4: Copilot / Chat en VS Code</a></summary>
+      <ul>
+        <li><a href="#b4-autenticacion">C&oacute;mo autenticar</a></li>
+        <li><a href="#b4-sincronizacion">Qu&eacute; permite la sincronizaci&oacute;n</a></li>
+        <li><a href="#b4-menciones">Menciones de "@" en el chat</a></li>
+        <li><a href="#b4-modelos">Modelos disponibles y API keys</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-5">Bloque 5: Estructura de trabajo con Markdown</a></summary>
+      <ul>
+        <li><a href="#b5-readme">Crear README.md</a></li>
+        <li><a href="#b5-ventajas">Ventajas de Markdown</a></li>
+        <li><a href="#b5-vista-previa">Tablas, LaTeX, previsualizaci&oacute;n</a></li>
+        <li><a href="#b5-organizacion">Organizaci&oacute;n de pantalla en VS Code</a></li>
+        <li><a href="#b5-config">Configuraci&oacute;n adicional</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-6">Bloque 6: Instrucciones y agentes</a></summary>
+      <ul>
+        <li><a href="#b6-que-son">Qu&eacute; son</a></li>
+        <li><a href="#b6-para-que">Para qu&eacute; sirven</a></li>
+        <li><a href="#b6-buenas">Buenas pr&aacute;cticas</a></li>
+        <li><a href="#b6-reglas">Diferencia entre reglas globales vs por chat</a></li>
+        <li><a href="#b6-patron">Patr&oacute;n recomendado</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-7">Bloque 7: Estrategia de prompting</a></summary>
+      <ul>
+        <li><a href="#b7-diseno">Dise&ntilde;o exhaustivo vs iterar sobre borrador</a></li>
+        <li><a href="#b7-contrarian">Contrarian prompting</a></li>
+        <li><a href="#b7-sesgos">Sesgos por nivel educativo</a></li>
+        <li><a href="#b7-riesgo">Riesgo de acumulaci&oacute;n de errores</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-8">Bloque 8: Legislaci&oacute;n educativa</a></summary>
+      <ul>
+        <li><a href="#b8-advertencia">Advertencia: riesgo de inventar normas</a></li>
+        <li><a href="#b8-recomendacion">Recomendaci&oacute;n: descargar PDFs y convertir a TXT/Markdown</a></li>
+        <li><a href="#b8-txt">Por qu&eacute; TXT consume menos tokens que PDF</a></li>
+        <li><a href="#b8-estructura">Propuesta de estructura de carpeta</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-9">Bloque 9: Generaci&oacute;n de apuntes y recursos</a></summary>
+      <ul>
+        <li><a href="#b9-mermaid">Mermaid para diagramas</a></li>
+        <li><a href="#b9-python">Python para generar figuras</a></li>
+        <li><a href="#b9-estrategia">Estrategia para matem&aacute;ticas, diagramas y gr&aacute;ficas</a></li>
+        <li><a href="#b9-publicar">Publicar en GitHub desde VS Code</a></li>
+      </ul>
+    </details>
+    <details><summary><a href="#bloque-10">Bloque 10: Reutilizaci&oacute;n del contenido en m&uacute;ltiples formatos</a></summary></details>
+    <details>
+      <summary><a href="#bloque-11">Bloque 11: Web de apuntes con Docusaurus</a></summary>
+      <ul>
+        <li><a href="#b11-que">Qu&eacute; hace Docusaurus</a></li>
+        <li><a href="#b11-por-que">Por qu&eacute; es adecuado para apuntes</a></li>
+        <li><a href="#b11-publicacion">Publicaci&oacute;n y actualizaci&oacute;n autom&aacute;tica</a></li>
+        <li><a href="#b11-valor">Valor pedag&oacute;gico</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-12">Bloque 12: Presentaciones</a></summary>
+      <ul>
+        <li><a href="#b12-opciones">Opciones tradicionales</a></li>
+        <li><a href="#b12-reveal">Reveal.js: presentaciones como web</a></li>
+        <li><a href="#b12-pdf">Exportaci&oacute;n a PDF desde Reveal.js</a></li>
+      </ul>
+    </details>
+  </details>
+  <details>
+    <summary>Preguntas frecuentes</summary>
+    <details><summary><a href="#faq">Problemas frecuentes y soluciones (FAQ)</a></summary></details>
+  </details>
+  <details>
+    <summary>Checklist</summary>
+    <details><summary><a href="#checklist-final">Checklist final de trabajo recomendado</a></summary></details>
+  </details>
+  <details>
+    <summary>Glosario y t&eacute;rminos</summary>
+    <details><summary><a href="#glosario-siglas">Glosario de t&eacute;rminos y siglas</a></summary></details>
+  </details>
+  <details>
+    <summary>Ejercicio guiado</summary>
+    <details>
+      <summary><a href="#ejercicio-guiado">Ejercicio guiado: Creaci&oacute;n completa de una web de apuntes</a></summary>
+      <ul>
+        <li><a href="#ej-objetivo">Objetivo del ejercicio</a></li>
+        <li><a href="#ej-requisitos">Requisitos previos del ejercicio</a></li>
+        <li><a href="#ej-fases">Fases del ejercicio</a></li>
+        <li><a href="#ej-f1">Fase 1: Crear el proyecto base (carpeta vac&iacute;a)</a></li>
+        <li><a href="#ej-f2">Fase 2: Pedir a la IA que dise&ntilde;e el proyecto</a></li>
+        <li><a href="#ej-f3">Fase 3: Creaci&oacute;n autom&aacute;tica de la estructura del proyecto</a></li>
+        <li><a href="#ej-f4">Fase 4: Crear los apuntes (fuente &uacute;nica)</a></li>
+        <li><a href="#ej-f5">Fase 5: Generaci&oacute;n de figuras y gr&aacute;ficas con Python</a></li>
+        <li><a href="#ej-f6">Fase 6: Adaptar los apuntes para Docusaurus</a></li>
+        <li><a href="#ej-f7">Fase 7: Crear las presentaciones con Reveal.js</a></li>
+        <li><a href="#ej-f8">Fase 8: Generaci&oacute;n del PDF</a></li>
+        <li><a href="#ej-f9">Fase 9: Configurar GitHub Pages con IA</a></li>
+        <li><a href="#ej-f10">Fase 10: Publicar el repositorio</a></li>
+        <li><a href="#ej-f11">Fase 11: Exportar presentaciones a PDF</a></li>
+        <li><a href="#ej-resultado">Resultado esperado</a></li>
+      </ul>
+    </details>
+  </details>
+</div>
+  <details>
+    <summary>Introducci&oacute;n</summary>
+    <details><summary><a href="#objetivos-sesion">Objetivos de la sesi&oacute;n</a></summary></details>
+  </details>
+  <details>
+    <summary>Mapa general de herramientas y conceptos</summary>
+    <details><summary><a href="#herramientas-principales">Herramientas principales</a></summary></details>
+    <details><summary><a href="#ecosistema-licencias">Ecosistema y licencias</a></summary></details>
+    <details><summary><a href="#alternativas-complementarias">Alternativas y herramientas complementarias</a></summary></details>
+  </details>
+  <details>
+    <summary>Apuntes y notas de teor&iacute;a (Bloques 1 a 12)</summary>
+    <details>
+      <summary><a href="#bloque-1">Bloque 1: Licencia educativa GitHub</a></summary>
+      <ul>
+        <li><a href="#b1-requisitos">Requisitos</a></li>
+        <li><a href="#b1-errores">Errores t&iacute;picos observados</a></li>
+        <li><a href="#b1-checklist">Checklist de verificaci&oacute;n</a></li>
+        <li><a href="#b1-estrategias">Estrategias si no funciona</a></li>
+      </ul>
+    </details>
+    <details><summary><a href="#bloque-2">Bloque 2: Diferencia entre GitHub y VS Code</a></summary></details>
+    <details>
+      <summary><a href="#bloque-3">Bloque 3: Instalaci&oacute;n y configuraci&oacute;n de VS Code (Windows)</a></summary>
+      <ul>
+        <li><a href="#b3-pasos">Pasos de instalaci&oacute;n</a></li>
+        <li><a href="#b3-open">Opciones recomendadas (Open with Code)</a></li>
+        <li><a href="#b3-autosave">Configuraci&oacute;n &uacute;til: Auto Save</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-4">Bloque 4: Copilot/Chat en VS Code y sincronizaci&oacute;n con GitHub</a></summary>
+      <ul>
+        <li><a href="#b4-autenticacion">C&oacute;mo autenticar</a></li>
+        <li><a href="#b4-sincronizacion">Qu&eacute; permite la sincronizaci&oacute;n</a></li>
+        <li><a href="#b4-menciones">Menciones de "@" en el chat</a></li>
+        <li><a href="#b4-modelos">Modelos disponibles y API keys</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-5">Bloque 5: Estructura de trabajo con carpetas y Markdown</a></summary>
+      <ul>
+        <li><a href="#b5-readme">Crear README.md</a></li>
+        <li><a href="#b5-ventajas">Ventajas de Markdown</a></li>
+        <li><a href="#b5-vista-previa">Tablas, LaTeX, previsualizaci&oacute;n</a></li>
+        <li><a href="#b5-organizacion">Organizaci&oacute;n de pantalla en VS Code</a></li>
+        <li><a href="#b5-config">Configuraci&oacute;n adicional</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-6">Bloque 6: Instrucciones/Agentes</a></summary>
+      <ul>
+        <li><a href="#b6-que-son">Qu&eacute; son</a></li>
+        <li><a href="#b6-para-que">Para qu&eacute; sirven</a></li>
+        <li><a href="#b6-buenas">Buenas pr&aacute;cticas</a></li>
+        <li><a href="#b6-reglas">Diferencia entre reglas globales vs por chat</a></li>
+        <li><a href="#b6-patron">Patr&oacute;n recomendado</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-7">Bloque 7: Estrategia de prompting aplicada a educaci&oacute;n</a></summary>
+      <ul>
+        <li><a href="#b7-diseno">Dise&ntilde;o exhaustivo vs iterar sobre borrador</a></li>
+        <li><a href="#b7-contrarian">Contrarian prompting</a></li>
+        <li><a href="#b7-sesgos">Sesgos por nivel educativo</a></li>
+        <li><a href="#b7-riesgo">Riesgo de acumulaci&oacute;n de errores</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-8">Bloque 8: Legislaci&oacute;n educativa</a></summary>
+      <ul>
+        <li><a href="#b8-advertencia">Advertencia: riesgo de inventar normas</a></li>
+        <li><a href="#b8-recomendacion">Recomendaci&oacute;n: descargar PDFs y convertir a TXT/Markdown</a></li>
+        <li><a href="#b8-txt">Por qu&eacute; TXT consume menos tokens que PDF</a></li>
+        <li><a href="#b8-estructura">Propuesta de estructura de carpeta</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-9">Bloque 9: Generaci&oacute;n de apuntes y recursos</a></summary>
+      <ul>
+        <li><a href="#b9-mermaid">Mermaid para diagramas</a></li>
+        <li><a href="#b9-python">Python para generar figuras</a></li>
+        <li><a href="#b9-estrategia">Estrategia para matem&aacute;ticas, diagramas y gr&aacute;ficas</a></li>
+        <li><a href="#b9-publicar">Publicar en GitHub desde VS Code</a></li>
+      </ul>
+    </details>
+    <details><summary><a href="#bloque-10">Bloque 10: Reutilizaci&oacute;n del contenido en m&uacute;ltiples formatos</a></summary></details>
+    <details>
+      <summary><a href="#bloque-11">Bloque 11: Web de apuntes con Docusaurus</a></summary>
+      <ul>
+        <li><a href="#b11-que">Qu&eacute; hace Docusaurus</a></li>
+        <li><a href="#b11-por-que">Por qu&eacute; es adecuado para apuntes</a></li>
+        <li><a href="#b11-publicacion">Publicaci&oacute;n y actualizaci&oacute;n autom&aacute;tica</a></li>
+        <li><a href="#b11-valor">Valor pedag&oacute;gico</a></li>
+      </ul>
+    </details>
+    <details>
+      <summary><a href="#bloque-12">Bloque 12: Presentaciones</a></summary>
+      <ul>
+        <li><a href="#b12-opciones">Opciones tradicionales</a></li>
+        <li><a href="#b12-reveal">Reveal.js: presentaciones como web</a></li>
+        <li><a href="#b12-pdf">Exportaci&oacute;n a PDF desde Reveal.js</a></li>
+      </ul>
+    </details>
+  </details>
+  <details>
+    <summary>Preguntas frecuentes</summary>
+    <details><summary><a href="#faq">Problemas frecuentes y soluciones (FAQ)</a></summary></details>
+  </details>
+  <details>
+    <summary>Checklist</summary>
+    <details><summary><a href="#checklist-final">Checklist final de trabajo recomendado</a></summary></details>
+  </details>
+  <details>
+    <summary>Glosario y t&eacute;rminos</summary>
+    <details><summary><a href="#glosario-siglas">Glosario de t&eacute;rminos y siglas</a></summary></details>
+  </details>
+  <details>
+    <summary>Ejercicio guiado</summary>
+    <details>
+      <summary><a href="#ejercicio-guiado">Ejercicio guiado: Creaci&oacute;n completa de una web de apuntes</a></summary>
+      <ul>
+        <li><a href="#ej-objetivo">Objetivo del ejercicio</a></li>
+        <li><a href="#ej-requisitos">Requisitos previos del ejercicio</a></li>
+        <li><a href="#ej-fases">Fases del ejercicio</a></li>
+        <li><a href="#ej-f1">Fase 1: Crear el proyecto base (carpeta vac&iacute;a)</a></li>
+        <li><a href="#ej-f2">Fase 2: Pedir a la IA que dise&ntilde;e el proyecto</a></li>
+        <li><a href="#ej-f3">Fase 3: Creaci&oacute;n autom&aacute;tica de la estructura del proyecto</a></li>
+        <li><a href="#ej-f4">Fase 4: Crear los apuntes (fuente &uacute;nica)</a></li>
+        <li><a href="#ej-f5">Fase 5: Generaci&oacute;n de figuras y gr&aacute;ficas con Python</a></li>
+        <li><a href="#ej-f6">Fase 6: Adaptar los apuntes para Docusaurus</a></li>
+        <li><a href="#ej-f7">Fase 7: Crear las presentaciones con Reveal.js</a></li>
+        <li><a href="#ej-f8">Fase 8: Generaci&oacute;n del PDF</a></li>
+        <li><a href="#ej-f9">Fase 9: Configurar GitHub Pages con IA</a></li>
+        <li><a href="#ej-f10">Fase 10: Publicar el repositorio</a></li>
+        <li><a href="#ej-f11">Fase 11: Exportar presentaciones a PDF</a></li>
+        <li><a href="#ej-resultado">Resultado esperado</a></li>
+      </ul>
+    </details>
+  </details>
+</div>
+  <details>
+    <summary>Introducci&oacute;n</summary>
+    <details>
+      <summary>Objetivos de la sesi&oacute;n</summary>
+    </details>
+  </details>
+  <details>
+    <summary>Mapa general de herramientas y conceptos</summary>
+    <details>
+      <summary>Herramientas principales</summary>
+    </details>
+    <details>
+      <summary>Ecosistema y licencias</summary>
+    </details>
+    <details>
+      <summary>Alternativas y herramientas complementarias</summary>
+    </details>
+  </details>
+  <details>
+    <summary>Apuntes y notas de teor&iacute;a (Bloques 1 a 12)</summary>
+    <details><summary>Bloque 1: Licencia educativa GitHub</summary></details>
+    <details><summary>Bloque 2: Diferencia entre GitHub y VS Code</summary></details>
+    <details><summary>Bloque 3: Instalaci&oacute;n y configuraci&oacute;n de VS Code (Windows)</summary></details>
+    <details><summary>Bloque 4: Copilot/Chat en VS Code y sincronizaci&oacute;n con GitHub</summary></details>
+    <details><summary>Bloque 5: Estructura de trabajo con carpetas y Markdown</summary></details>
+    <details><summary>Bloque 6: Instrucciones/Agentes</summary></details>
+    <details><summary>Bloque 7: Estrategia de prompting aplicada a educaci&oacute;n</summary></details>
+    <details><summary>Bloque 8: Legislaci&oacute;n educativa</summary></details>
+    <details><summary>Bloque 9: Generaci&oacute;n de apuntes y recursos</summary></details>
+    <details><summary>Bloque 10: Reutilizaci&oacute;n del contenido en m&uacute;ltiples formatos</summary></details>
+    <details><summary>Bloque 11: Web de apuntes con Docusaurus</summary></details>
+    <details><summary>Bloque 12: Presentaciones</summary></details>
+  </details>
+  <details>
+    <summary>Preguntas frecuentes</summary>
+    <details><summary>Problemas frecuentes y soluciones (FAQ)</summary></details>
+  </details>
+  <details>
+    <summary>Checklist</summary>
+    <details><summary>Checklist final de trabajo recomendado</summary></details>
+  </details>
+  <details>
+    <summary>Glosario y t&eacute;rminos</summary>
+    <details><summary>Glosario de t&eacute;rminos y siglas</summary></details>
+  </details>
+  <details>
+    <summary>Ejercicio guiado</summary>
+    <details><summary>Ejercicio guiado: Creaci&oacute;n completa de una web de apuntes</summary></details>
+  </details>
+</div>
+
+## Introducción {#introduccion}
 
 ### Objetivos de la sesión
 
@@ -34,11 +374,11 @@ Al finalizar la sesión, el docente será capaz de:
 
 ---
 
-## Mapa general de herramientas y conceptos
+## Mapa general de herramientas y conceptos {#mapa-general}
 
 Antes de entrar en detalles técnicos, es fundamental entender el ecosistema completo y cómo cada pieza encaja en el flujo de trabajo.
 
-### Herramientas principales
+### Herramientas principales {#herramientas-principales}
 
 | Herramienta | Descripción |
 |------------|-------------|
@@ -54,7 +394,7 @@ Antes de entrar en detalles técnicos, es fundamental entender el ecosistema com
 
 ---
 
-### Ecosistema y licencias
+### Ecosistema y licencias {#ecosistema-licencias}
 
 - GitHub y VS Code pertenecen al ecosistema Microsoft
 - Copilot está muy integrado en VS Code
@@ -68,7 +408,7 @@ Antes de entrar en detalles técnicos, es fundamental entender el ecosistema com
 
 ---
 
-### Alternativas y herramientas complementarias
+### Alternativas y herramientas complementarias {#alternativas-complementarias}
 
 **Canvas (ChatGPT / Gemini / Claude)**  
 Permiten crear una web o contenido desde el chat y compartir rápido por URL. Muy accesible, menos control que VS Code.
@@ -91,12 +431,14 @@ Muy recomendable para trabajar con muchos documentos (ej. legislación), resumir
 
 ---
 
-## Bloque 1: Licencia educativa GitHub {#bloque-1}
+## Apuntes y notas de teoría (Bloques 1 a 12) {#teoria}
+
+### Bloque 1: Licencia educativa GitHub {#bloque-1}
 
 La obtención de la licencia educativa puede presentar dificultades.  
 Esta sección recopila los problemas más comunes y sus soluciones.
 
-### Requisitos
+#### Requisitos {#b1-requisitos}
 
 - Tener cuenta de GitHub creada
 - Añadir y verificar un correo institucional/educativo (`.edu` o equivalente)
@@ -145,7 +487,7 @@ Esta sección recopila los problemas más comunes y sus soluciones.
 
 ---
 
-### Estrategias si no funciona
+#### Estrategias si no funciona {#b1-estrategias}
 
 - Empezar igualmente con modelos gratuitos
 - Usar alternativas según tarea:
@@ -155,7 +497,7 @@ Esta sección recopila los problemas más comunes y sus soluciones.
 
 ---
 
-## Bloque 2: Diferencia entre GitHub y VS Code {#bloque-2}
+### Bloque 2: Diferencia entre GitHub y VS Code {#bloque-2}
 
 Son herramientas distintas que se complementan:
 
@@ -170,7 +512,7 @@ Son herramientas distintas que se complementan:
 
 ---
 
-## Bloque 3: Instalación y configuración de VS Code (Windows) {#bloque-3}
+### Bloque 3: Instalación y configuración de VS Code (Windows) {#bloque-3}
 
 ### Pasos de instalación
 
@@ -196,7 +538,7 @@ Ventaja: abrir directamente la carpeta del proyecto.
 
 ---
 
-## Bloque 4: Copilot / Chat en VS Code {#bloque-4}
+### Bloque 4: Copilot / Chat en VS Code {#bloque-4}
 
 ### Autenticación
 
@@ -235,9 +577,9 @@ Si pide API key, no es imprescindible. No tener API key no es un fallo.
 
 ---
 
-## Bloque 5: Estructura de trabajo con Markdown {#bloque-5}
+### Bloque 5: Estructura de trabajo con Markdown {#bloque-5}
 
-### Crear README.md
+#### Crear README.md {#b5-readme}
 
 - Abrir una carpeta de trabajo en VS Code
 - Crear `README.md` como punto de entrada
@@ -245,7 +587,7 @@ Si pide API key, no es imprescindible. No tener API key no es un fallo.
 
 ---
 
-### Ventajas de Markdown
+#### Ventajas de Markdown {#b5-ventajas}
 
 - Ligero y portable
 - Ideal para apuntes y documentación
@@ -293,7 +635,7 @@ Windows suele ocultar `.md` y `.txt`. Conviene enseñar a mostrarlas.
 
 ---
 
-## Bloque 6: Instrucciones y agentes {#bloque-6}
+### Bloque 6: Instrucciones y agentes {#bloque-6}
 
 ### Qué son
 
@@ -333,7 +675,7 @@ Archivos con reglas persistentes para guiar a la IA (`agents.md`, `copilot-instr
 
 ---
 
-## Bloque 7: Estrategia de prompting {#bloque-7}
+### Bloque 7: Estrategia de prompting {#bloque-7}
 
 ### Diseño vs iteración
 
@@ -342,7 +684,7 @@ La iteración sobre borradores es menos efectiva.
 
 ---
 
-### Contrarian prompting
+#### Contrarian prompting {#b7-contrarian}
 
 - Generar versión 1
 - Pasarla a otro modelo
@@ -350,7 +692,7 @@ La iteración sobre borradores es menos efectiva.
 
 ---
 
-### Sesgos por nivel educativo
+#### Sesgos por nivel educativo {#b7-sesgos}
 
 - Tienden a simplificar
 - Pedir 1–2 cursos por encima y luego adaptar
@@ -364,7 +706,7 @@ Revisar y corregir por fases.
 
 ---
 
-## Bloque 8: Legislación educativa {#bloque-8}
+### Bloque 8: Legislación educativa {#bloque-8}
 
 ⚠️ Alto riesgo de inventar normas si no se aportan documentos.
 
@@ -391,9 +733,9 @@ legislacion/
 protocolos/
 ``` 
 
-## Bloque 9: Generación de apuntes y recursos {#bloque-9}
+### Bloque 9: Generación de apuntes y recursos {#bloque-9}
 
-### Mermaid para diagramas
+#### Mermaid para diagramas {#b9-mermaid}
 
 Mermaid permite describir diagramas en texto y renderizarlos como gráficos:
 
@@ -406,7 +748,7 @@ La IA trabaja mejor con **estructuras textuales** que con píxeles. El diagrama 
 
 ---
 
-### Python para generar figuras
+#### Python para generar figuras {#b9-python}
 
 En lugar de generar imágenes directamente con modelos gráficos, se recomienda generar **código que dibuje las figuras**.
 
@@ -437,7 +779,7 @@ Cuando se incluyen matemáticas o gráficas hay **tres niveles posibles**:
 
 ---
 
-### Publicar en GitHub desde VS Code
+#### Publicar en GitHub desde VS Code {#b9-publicar}
 
 VS Code ofrece un flujo directo de **“Publish to GitHub”** si estás autenticado.
 
@@ -450,7 +792,7 @@ VS Code ofrece un flujo directo de **“Publish to GitHub”** si estás autenti
 
 ---
 
-## Bloque 10: Reutilización del contenido en múltiples formatos {#bloque-10}
+### Bloque 10: Reutilización del contenido en múltiples formatos {#bloque-10}
 
 El núcleo del enfoque es que el contenido se escribe **una sola vez** y se reutiliza.
 
@@ -463,7 +805,7 @@ El núcleo del enfoque es que el contenido se escribe **una sola vez** y se reut
 
 ---
 
-## Bloque 11: Web de apuntes con Docusaurus {#bloque-11}
+### Bloque 11: Web de apuntes con Docusaurus {#bloque-11}
 
 Docusaurus resuelve el problema:
 
@@ -506,9 +848,9 @@ Docusaurus resuelve el problema:
 
 ---
 
-## Bloque 12: Presentaciones {#bloque-12}
+### Bloque 12: Presentaciones {#bloque-12}
 
-### Opciones tradicionales
+#### Opciones tradicionales {#b12-opciones}
 
 Para presentaciones visuales tradicionales:
 
@@ -518,7 +860,7 @@ Para presentaciones visuales tradicionales:
 
 ---
 
-### Reveal.js: presentaciones como web
+#### Reveal.js: presentaciones como web {#b12-reveal}
 
 Reveal.js permite crear presentaciones como web:
 
@@ -546,7 +888,9 @@ Al estar basado en texto/HTML/Markdown, la IA lo manipula mejor que un lienzo gr
 
 ---
 
-## Problemas frecuentes y soluciones (FAQ) {#faq}
+## Preguntas frecuentes {#preguntas-frecuentes}
+
+### Problemas frecuentes y soluciones (FAQ) {#faq}
 
 | Problema | Solución |
 |--------|---------|
@@ -558,7 +902,9 @@ Al estar basado en texto/HTML/Markdown, la IA lo manipula mejor que un lienzo gr
 
 ---
 
-## Checklist final de trabajo recomendado {#checklist-final}
+## Checklist {#checklist}
+
+### Checklist final de trabajo recomendado {#checklist-final}
 
 - Crear cuenta de GitHub y verificar correos
 - Solicitar licencia educativa (si aplica)
@@ -576,7 +922,9 @@ Al estar basado en texto/HTML/Markdown, la IA lo manipula mejor que un lienzo gr
 
 ---
 
-## Glosario de términos y siglas {#glosario}
+## Glosario y términos {#glosario}
+
+### Glosario de términos y siglas {#glosario-siglas}
 
 | Término | Definición |
 |-------|-----------|
@@ -599,9 +947,11 @@ Al estar basado en texto/HTML/Markdown, la IA lo manipula mejor que un lienzo gr
 
 ---
 
-## Ejercicio guiado: Creación completa de una web de apuntes {#ejercicio-guiado}
+## Ejercicio guiado {#ejercicio}
 
-### Objetivo del ejercicio
+### Ejercicio guiado: Creación completa de una web de apuntes {#ejercicio-guiado}
+
+#### Objetivo del ejercicio {#ej-objetivo}
 
 Crear desde cero un proyecto educativo que:
 
@@ -617,7 +967,7 @@ El docente **no escribe código a mano**: dirige, revisa y valida.
 
 ---
 
-### Fases del ejercicio
+#### Fases del ejercicio {#ej-fases}
 
 El ejercicio se estructura en fases progresivas:
 
@@ -635,7 +985,7 @@ El ejercicio se estructura en fases progresivas:
 
 ---
 
-## Objetivo del ejercicio
+#### Objetivo del ejercicio {#ej-objetivo}
 
 Crear desde cero un proyecto educativo que:
 
@@ -653,7 +1003,9 @@ Dirige el proceso con instrucciones claras, revisa y valida.
 
 ---
 
-## Requisitos previos del ejercicio
+#### Requisitos previos del ejercicio {#ej-requisitos}
+
+Necesario:
 
 ### Necesario
 
@@ -665,7 +1017,7 @@ Dirige el proceso con instrucciones claras, revisa y valida.
 
 ---
 
-## Fase 1: Crear el proyecto base (carpeta vacía)
+#### Fase 1: Crear el proyecto base (carpeta vacía) {#ej-f1}
 
 En el sistema operativo:
 
@@ -682,7 +1034,7 @@ En este punto:
 
 ---
 
-## Fase 2: Pedir a la IA que diseñe el proyecto
+#### Fase 2: Pedir a la IA que diseñe el proyecto {#ej-f2}
 
 1. Abrir el **chat de IA** en VS Code
 
@@ -701,7 +1053,7 @@ Diseña la estructura completa del proyecto,
 indicando carpetas, herramientas y flujo de trabajo.
 No crees aún los archivos: solo explícame el plan.
 ```
-### Resultado esperado
+#### Resultado esperado {#ej-resultado}
 
 La IA responde con:
 
@@ -717,7 +1069,7 @@ La IA responde con:
 
 ---
 
-## Fase 3: Creación automática de la estructura del proyecto
+#### Fase 3: Creación automática de la estructura del proyecto {#ej-f3}
 
 ### Segundo prompt (ejecución)
 
@@ -764,7 +1116,7 @@ README.md
 
 ---
 
-## Fase 4: Crear los apuntes (fuente única)
+#### Fase 4: Crear los apuntes (fuente única) {#ej-f4}
 
 En la carpeta `apuntes/`:
 
@@ -796,7 +1148,7 @@ Todo se genera a partir de estos Markdown.
 
 ---
 
-## Fase 5: Generación de figuras y gráficas con Python
+#### Fase 5: Generación de figuras y gráficas con Python {#ej-f5}
 
 ### Prompt tipo
 
@@ -824,7 +1176,7 @@ Las imágenes se enlazan desde los archivos `.md`
 
 ---
 
-## Fase 6: Adaptar los apuntes para Docusaurus
+#### Fase 6: Adaptar los apuntes para Docusaurus {#ej-f6}
 
 ### Prompt tipo
 
@@ -842,7 +1194,7 @@ Configura el sidebar con todos los temas.
 
 ---
 
-## Fase 7: Crear las presentaciones con Reveal.js
+#### Fase 7: Crear las presentaciones con Reveal.js {#ej-f7}
 
 ### Prompt tipo
 
@@ -868,7 +1220,7 @@ Incluye:
 
 ---
 
-## Fase 8: Generación del PDF
+#### Fase 8: Generación del PDF {#ej-f8}
 
 ### Prompt tipo
 
@@ -890,7 +1242,7 @@ El PDF se genera automáticamente.
 
 ---
 
-## Fase 9: Configurar GitHub Pages con IA
+#### Fase 9: Configurar GitHub Pages con IA {#ej-f9}
 
 ### Prompt tipo
 
@@ -912,7 +1264,7 @@ El docente no escribe YAML, solo revisa.
 
 ---
 
-## Fase 10: Publicar el repositorio
+#### Fase 10: Publicar el repositorio {#ej-f10}
 
 Desde VS Code:
 
@@ -936,7 +1288,7 @@ Publica este proyecto en un repositorio nuevo en mi cuenta de GitHub.
 
 ---
 
-## Fase 11: Exportar presentaciones a PDF
+#### Fase 11: Exportar presentaciones a PDF {#ej-f11}
 
 Para cada presentación Reveal.js:
 
@@ -948,7 +1300,7 @@ No se necesita software adicional.
 
 ---
 
-## Resultado final del ejercicio
+
 
 Un proyecto que:
 
