@@ -1,0 +1,252 @@
+﻿.hero {
+  position: relative;
+  padding: 4.5rem 1.25rem 3.5rem;
+  background: radial-gradient(1200px 600px at 10% 10%, #f7e6b5 0%, rgba(247, 230, 181, 0.2) 45%, transparent 70%),
+    radial-gradient(1200px 600px at 90% 0%, #9dd9d2 0%, rgba(157, 217, 210, 0.2) 45%, transparent 70%),
+    linear-gradient(135deg, #f9f6ef 0%, #f2efe6 40%, #eef6f5 100%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.heroGrid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2.5rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+}
+
+.heroCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.heroTitle {
+  font-size: clamp(2.6rem, 4vw, 4.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0;
+}
+
+.heroTagline {
+  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+  color: #2f3a2f;
+  margin: 0;
+}
+
+.heroLead {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: #2f2f2f;
+  max-width: 46ch;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.ctaPrimary {
+  background: #111827;
+  color: #f9f6ef;
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ctaPrimary:hover {
+  color: #f9f6ef;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(17, 24, 39, 0.2);
+}
+
+.ctaGhost {
+  border: 1px solid rgba(17, 24, 39, 0.2);
+  color: #111827;
+  padding: 0.75rem 1.1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.ctaGhost:hover {
+  background: rgba(17, 24, 39, 0.05);
+  color: #111827;
+  transform: translateY(-2px);
+}
+
+.heroMeta {
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+}
+
+.heroCard {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.cardHeader {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.cardList {
+  margin: 0 0 1rem 1rem;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.cardFooter {
+  font-size: 0.85rem;
+  color: #4b5563;
+  border-top: 1px dashed rgba(0, 0, 0, 0.1);
+  padding-top: 0.75rem;
+}
+
+.section,
+.sectionAlt {
+  padding: 3rem 1.25rem;
+}
+
+.sectionAlt {
+  background: #0f172a;
+  color: #e2e8f0;
+}
+
+.sectionHeader {
+  max-width: 880px;
+  margin: 0 auto 2rem;
+  text-align: center;
+}
+
+.sectionHeader p {
+  color: inherit;
+  opacity: 0.8;
+}
+
+.featureGrid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.featureCard {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.featureTitle {
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.featureText {
+  color: #475569;
+}
+
+.cardLink {
+  margin-top: auto;
+  font-weight: 600;
+  color: #111827;
+  text-decoration: none;
+}
+
+.cardLink:hover {
+  text-decoration: underline;
+}
+
+.sectionAlt .featureCard {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+}
+
+.timeline {
+  max-width: 880px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.stepNum {
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  background: #fbbf24;
+  color: #0f172a;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.stepTitle {
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.2rem;
+}
+
+.stepText {
+  opacity: 0.85;
+}
+
+.quickLinks {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.quickBtn {
+  padding: 1rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: #fff7ed;
+  color: #111827;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.quickBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);
+  color: #111827;
+}
+
+@media (max-width: 960px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+}
