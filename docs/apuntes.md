@@ -351,7 +351,7 @@ hide_table_of_contents: true
 
 ### Objetivos de la sesión
 
-Este curso tiene como propósito familiarizar a los docentes con un conjunto de herramientas modernas para crear y gestionar contenido educativo de forma eficiente, aprovechando la inteligencia artificial.
+Este curso tiene como propósito familiarizar a los docentes con un conjunto de herramientas de programación para crear y gestionar contenido educativo de forma eficiente, aprovechando la inteligencia artificial.
 
 Al finalizar la sesión, el docente será capaz de:
 
