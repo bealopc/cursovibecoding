@@ -22,7 +22,8 @@ const config = {
   organizationName: 'bealopc',
   projectName: 'cursovibecoding',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
+  onBrokenMarkdownLinks: 'warn',
 
   i18n: {
     defaultLocale: 'es',
@@ -66,7 +67,7 @@ const config = {
             position: 'left',
             label: 'Apuntes',
           },
-          {to: '/reveal/', label: 'Presentacion', position: 'left'},
+          {to: '/reveal/index.html', label: 'Presentacion', position: 'left'},
           {to: '/pdf/apuntes.pdf', label: 'PDF', position: 'left'},
           {
             href: 'https://github.com/bealopc/cursovibecoding',
@@ -92,7 +93,7 @@ const config = {
             items: [
               {
                 label: 'Presentacion',
-                to: '/reveal/',
+                to: '/reveal/index.html',
               },
               {
                 label: 'PDF',

@@ -22,7 +22,7 @@ function Hero() {
             <Link className={styles.ctaPrimary} to="/docs/apuntes">
               Ver apuntes
             </Link>
-            <Link className={styles.ctaGhost} to="/reveal/">
+            <Link className={styles.ctaGhost} to="/reveal/index.html">
               Ver presentacion
             </Link>
             <Link className={styles.ctaGhost} to="/pdf/apuntes.pdf">
@@ -90,7 +90,7 @@ export default function Home() {
               <div className={styles.featureText}>
                 Presentacion web lista para aula.
               </div>
-              <Link className={styles.cardLink} to="/reveal/">
+              <Link className={styles.cardLink} to="/reveal/index.html">
                 Abrir presentacion
               </Link>
             </div>
@@ -142,7 +142,7 @@ export default function Home() {
             <Link className={styles.quickBtn} to="/docs/apuntes">
               Abrir apuntes
             </Link>
-            <Link className={styles.quickBtn} to="/reveal/">
+            <Link className={styles.quickBtn} to="/reveal/index.html">
               Iniciar presentacion
             </Link>
             <Link className={styles.quickBtn} to="/pdf/apuntes.pdf">
