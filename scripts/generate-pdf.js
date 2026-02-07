@@ -9,12 +9,16 @@ const output = path.join(outputDir, 'apuntes.pdf');
 const md = fs.readFileSync(input, 'utf8');
 
 // Strip frontmatter
-const content = md.replace(/^---[\s\S]*?---\s*/m, '');
+let content = md.replace(/^---[\s\S]*?---\s*/m, '');
+
+// Remove Docusaurus admonitions like :::tip ... :::
+content = content.replace(/:::[\s\S]*?:::/g, '');
 
 function mdToText(s) {
   return s
     .replace(/```[\s\S]*?```/g, '')
     .replace(/`([^`]+)`/g, '$1')
+    .replace(/<[^>]+>/g, '') // strip HTML tags
     .replace(/^#+\s+/gm, '')
     .replace(/^>\s?/gm, '')
     .replace(/^\s*[-*+]\s+/gm, '• ')
@@ -39,7 +43,7 @@ const stream = fs.createWriteStream(output);
 doc.pipe(stream);
 
 // Title
-const lines = text.split('\n');
+const lines = text.split('\n').filter((l) => l.trim() !== '');
 const title = lines.shift() || 'Apuntes Vibe Coding';
 
 doc.fontSize(20).text(title, { align: 'center' });
