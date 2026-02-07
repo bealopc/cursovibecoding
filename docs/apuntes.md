@@ -1,6 +1,7 @@
 ---
 title: Apuntes y notas personales de VIbe Coding
 sidebar_position: 1
+hide_table_of_contents: true
 ---
 
 :::tip Descargas
