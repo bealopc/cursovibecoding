@@ -12,6 +12,8 @@ Repositorio: `https://github.com/bealopc/cursovibecoding`
 
 - Node.js >= 20
 - npm
+- Python 3
+- ReportLab (`pip install reportlab`)
 
 ## Instalación
 
@@ -32,6 +34,12 @@ npm run generate-pdf
 ```
 
 Salida: `static/pdf/apuntes.pdf`
+
+Alternativa:
+
+```bash
+npm run build:pdf
+```
 
 ## Build
 
