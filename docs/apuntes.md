@@ -1,5 +1,8 @@
 ---
-title: Apuntes y notas personales de VIbe Coding
+title: Apuntes y notas personales de Vibe Coding
+---
+
+# Apuntes y notas personales de Vibe Coding
 
 ## Introducción
 
@@ -7,372 +10,383 @@ title: Apuntes y notas personales de VIbe Coding
 
 Este curso tiene como propósito familiarizar a los docentes con un conjunto de herramientas modernas para crear y gestionar contenido educativo de forma eficiente, aprovechando la inteligencia artificial.
 
-Entender el mapa de herramientas (GitHub, Git, VS Code, Copilot/Chat, modelos de IA) y cómo se relacionan
+Al finalizar la sesión, el docente será capaz de:
 
-Aprender a instalar y configurar VS Code en Windows para trabajar con proyectos
+- Entender el mapa de herramientas (GitHub, Git, VS Code, Copilot/Chat, modelos de IA) y cómo se relacionan
+- Aprender a instalar y configurar VS Code en Windows para trabajar con proyectos
+- Conectar VS Code con GitHub para habilitar Copilot/Chat y sincronización
+- Crear estructura de trabajo basada en Markdown (`README.md`) para apuntes reutilizables
+- Introducir el uso de instrucciones y agentes para guiar a la IA
+- Comprender buenas prácticas:
+  - Sesgos de modelos
+  - Riesgo de acumulación de errores
+  - Tratamiento de legislación
+- Ver ejemplos aplicados:
+  - Generación de apuntes
+  - Diagramas con Mermaid
+  - Figuras con Python
+- Conocer opciones para presentaciones:
+  - Reveal.js
+  - Canvas y alternativas
 
-Conectar VS Code con GitHub para habilitar Copilot/Chat y sincronización
+---
 
-Crear estructura de trabajo basada en Markdown (README.md) para apuntes reutilizables
-
-Introducir el uso de instrucciones y agentes para guiar a la IA
-
-Comprender buenas prácticas: sesgos de modelos, riesgo de acumulación de errores, y tratamiento de legislación
-
-Ver ejemplos aplicados: generación de apuntes, diagramas con Mermaid, y figuras con Python
-
-Conocer opciones para presentaciones (Reveal.js) y alternativas canvas
-
-### Mapa general de herramientas y conceptos
+## Mapa general de herramientas y conceptos
 
 Antes de entrar en detalles técnicos, es fundamental entender el ecosistema completo y cómo cada pieza encaja en el flujo de trabajo.
 
 ### Herramientas principales
 
 | Herramienta | Descripción |
-| --- | --- |
-| GitHub | Servicio en la nube para alojar proyectos (repositorios) y colaborar; funciona como 'Drive' para proyectos, con despliegue automático de webs (GitHub Pages) |
-| Git | Sistema/protocolo de control de versiones (historial de cambios). Similar al historial de un documento |
-| VS Code | Editor/IDE local para trabajar con ficheros de texto (código, Markdown, etc.) |
-| Copilot/Chat | Capa de IA integrada en VS Code que permite chatear, generar ficheros, modificar contenido, etc. |
-| Modelos | Diferentes 'motores' de IA (OpenAI, Anthropic/Claude, Google/Gemini) disponibles según licencia. Cada uno tiene costes, límites y sesgos |
-| Tokens | Presupuesto de uso de IA (consumo). Los PDFs consumen más tokens que texto plano |
-| Markdown | Formato de texto plano para documentos, ideal para apuntes. Permite tablas, imágenes y fórmulas |
-| Mermaid | Lenguaje de diagramas en texto que se renderiza a gráfico (diagramas de flujo, secuencias, etc.) |
-| Python | Lenguaje útil para generar figuras/gráficas mediante código (ej. con Matplotlib), evitando edición manual de imágenes |
+|------------|-------------|
+| GitHub | Servicio en la nube para alojar proyectos (repositorios) y colaborar; funciona como un “Drive” para proyectos, con despliegue automático de webs (GitHub Pages). |
+| Git | Sistema/protocolo de control de versiones (historial de cambios). Similar al historial de un documento. |
+| VS Code | Editor/IDE local para trabajar con ficheros de texto (código, Markdown, etc.). |
+| Copilot / Chat | Capa de IA integrada en VS Code que permite chatear, generar ficheros y modificar contenido. |
+| Modelos | Motores de IA (OpenAI, Claude, Gemini). Cada uno tiene costes, límites y sesgos. |
+| Tokens | Presupuesto de uso de IA. Los PDFs consumen más tokens que texto plano. |
+| Markdown | Formato de texto plano ideal para apuntes. Permite tablas, imágenes y fórmulas. |
+| Mermaid | Lenguaje de diagramas en texto que se renderiza a gráfico. |
+| Python | Lenguaje útil para generar figuras y gráficas mediante código (ej. Matplotlib). |
+
+---
 
 ### Ecosistema y licencias
 
-GitHub y VS Code pertenecen al ecosistema de Microsoft; Copilot está muy integrado en VS Code
+- GitHub y VS Code pertenecen al ecosistema Microsoft
+- Copilot está muy integrado en VS Code
+- La licencia educativa de GitHub:
+  - Habilita mejores capacidades y modelos
+- Importante:
+  - La licencia ayuda, pero no es imprescindible
+  - Se puede trabajar con modelos gratuitos
+- Recomendación:
+  - Filtrar tutoriales por “último año” (estas herramientas cambian rápido)
 
-La licencia educativa de GitHub habilita acceso a mejores capacidades/modelos
-
-Importante: la licencia ayuda, pero no es imprescindible para empezar; se puede trabajar con modelos gratuitos
-
-Se recomienda filtrar tutoriales en internet por 'último año' porque estas herramientas cambian rápido
+---
 
 ### Alternativas y herramientas complementarias
 
-Canvas (ChatGPT/Gemini/Claude)
-
+**Canvas (ChatGPT / Gemini / Claude)**  
 Permiten crear una web o contenido desde el chat y compartir rápido por URL. Muy accesible, menos control que VS Code.
 
-Herramienta que genera webs y estructura de ficheros. Puede pedir cuenta Google/GitHub. Suele tener límites de créditos.
+**Herramientas de generación de webs**  
+Generan estructura de ficheros. Pueden pedir cuenta Google/GitHub. Suelen tener límites de créditos.
 
-Antigravity
+**Antigravity**  
+IDE tipo VS Code de Google (“fork”). Integra bien Gemini, cómodo para web y con buena gestión de tokens.
 
-IDE tipo VS Code de Google ('fork'). Integra bien Gemini, especialmente cómodo para web y con buena gestión de tokens.
+**Cursor**  
+IDE pionero en integrar IA. Muy potente, normalmente de pago (no se menciona licencia educativa).
 
-Cursor
+**Perplexity**  
+Útil para búsquedas con fuentes. En ciertos periodos ofreció beneficios educativos.  
+Nota: afirmación a verificar, los programas cambian.
 
-IDE pionero en integrar IA. Se considera muy bueno, pero normalmente es de pago (sin licencia educativa mencionada).
+**NotebookLM**  
+Muy recomendable para trabajar con muchos documentos (ej. legislación), resumir y generar Markdown. Útil como paso previo.
 
-Perplexity
-
-Útil para búsquedas con fuentes. En ciertos periodos ofreció beneficios educativos. Nota: afirmación a verificar, los programas cambian.
-
-NotebookLM
-
-Recomendado para trabajar con muchos documentos (ej. legislación), resumir y generar materiales en Markdown. Útil como paso previo.
+---
 
 ## Bloque 1: Licencia educativa GitHub {#bloque-1}
 
-La obtención de la licencia educativa puede presentar dificultades. Esta sección recopila los problemas más comunes y sus soluciones.
+La obtención de la licencia educativa puede presentar dificultades.  
+Esta sección recopila los problemas más comunes y sus soluciones.
 
 ### Requisitos
 
-Tener cuenta de GitHub creada
+- Tener cuenta de GitHub creada
+- Añadir y verificar un correo institucional/educativo (`.edu` o equivalente)
+- Solicitar el beneficio en “Education benefits”
 
-Añadir/verificar un correo institucional/educativo (dominio tipo .edu o equivalente)
+> Nota: algunos correos (ej. Gmail) no autentican como docente; se recomienda añadir varios correos verificados.
 
-Nota: con algunos correos (ej. Gmail) no autentican como docente; se recomienda añadir varios correos verificados
+---
 
-Solicitar el beneficio en 'Education benefits'
+### Errores típicos observados
 
-Errores típicos observados
+- Denegaciones repetidas (casos de hasta 4 intentos)
+- Verificación sensible a:
+  - Calidad de cámara
+  - Documento usado
+  - Coincidencia exacta del nombre
 
-Denegaciones repetidas (casos de hasta 4 intentos)
+---
 
-Verificación sensible a: calidad de cámara (webcam mala vs móvil/Mac mejor), documento usado, coincidencia exacta del nombre
+### Checklist de verificación
 
-Checklist de verificación
+#### Cuenta y correos
 
-### Cuenta y correos
+- Añadir correos alternativos en `Settings → Emails`
+- Verificar todos los correos
+- Tener claro el correo primario
 
-Añadir correos alternativos en 'Settings → Emails'
+#### Nombre coherente
 
-Verificar todos los correos añadidos
+- Perfil público: nombre completo real
+- “Billing / Payment info”: mismo nombre exacto  
+  (no hace falta tarjeta; solo el nombre)
 
-Tener claro cuál es el correo primario y cuáles están confirmados
+#### Documento y cámara
 
-### Nombre coherente
+- Probar documentos distintos
+- Usar mejor cámara (móvil o buena webcam)
 
-Perfil público: nombre completo real
+#### Tiempos
 
-'Billing/Payment info': mismo nombre exacto
+- La verificación puede tardar hasta ~72 horas
 
-Importante: no hace falta meter tarjeta; se refiere a la ficha de facturación con el nombre
+#### Reintentos
 
-Documento y cámara
+- Tras un fallo, el sistema se vuelve más exigente
 
-Probar con un documento válido (se mencionan distintos documentos; uno 'en inglés' funcionó en un caso)
-
-Probar cámara mejor: móvil o equipo con buena webcam
-
-### Tiempos
-
-Puede tardar hasta ~72 horas en verificación/actualización
-
-### Reintentos
-
-Si falla la primera vez, el sistema se vuelve más 'quisquilloso' con nombres y coincidencias
+---
 
 ### Estrategias si no funciona
 
-Empezar igualmente con modelos gratuitos para aprender el flujo
+- Empezar igualmente con modelos gratuitos
+- Usar alternativas según tarea:
+  - Búsqueda: Perplexity o Gemini
+  - Web rápida: Canvas o Vercel V0
+- Apoyarse en la comunidad
 
-Usar alternativas según tarea: Para buscar información: Perplexity o Gemini; Para crear web rápida: Canvas o Vercel V0
-
-Apoyarse en intercambio de experiencias en comunidad
+---
 
 ## Bloque 2: Diferencia entre GitHub y VS Code {#bloque-2}
 
-Es fundamental entender que son herramientas distintas que se complementan:
+Son herramientas distintas que se complementan:
 
-GitHub: 'como Google Drive' para proyectos. Aloja repositorios en la nube y permite historial/colaboración/despliegues
+- GitHub: “como Google Drive” para proyectos
+- Git: mecanismo de versionado (historial)
+- VS Code: editor/IDE local
 
-Git: mecanismo de versionado (historial), similar a ver versiones de un documento
+**Símil compuesto:**
 
-VS Code: editor/IDE local (como un 'Word' local, pero para texto/código/Markdown)
+- Git ≈ Word (control de versiones)
+- GitHub ≈ nube donde sincronizas y compartes
 
-Símil compuesto:
-
-Git ≈ 'Word (control de versiones/historial)'
-
-GitHub ≈ 'nube donde sincronizas y compartes'
+---
 
 ## Bloque 3: Instalación y configuración de VS Code (Windows) {#bloque-3}
 
-Pasos de instalación
+### Pasos de instalación
 
-Descargar VS Code desde la web oficial
+1. Descargar VS Code desde la web oficial
+2. Elegir instalador adecuado (x64 en la mayoría)
+3. Ejecutar instalador y seguir pasos estándar
 
-Elegir instalador adecuado (arquitectura x64 en la mayoría de equipos)
+---
 
-Ejecutar instalador y seguir pasos estándar
+### Opciones recomendadas: “Open with Code”
 
-### Opciones recomendadas (Open with Code)
+Permite abrir una carpeta con VS Code desde el botón derecho del explorador.
 
-Marcar opciones para integrar en el explorador de archivos:
+Ventaja: abrir directamente la carpeta del proyecto.
 
-'Open with Code' / abrir carpeta con VS Code desde botón derecho
+---
 
-Ventaja: abrir una carpeta del proyecto directamente sin abrir VS Code y luego buscarla
+### Configuración útil: Auto Save
 
-Configuración útil: Auto Save
+1. Abrir ajustes: icono de engranaje → Settings
+2. Buscar “Auto Save”
+3. Activar modo recomendado: `afterDelay`
 
-Cómo encontrarlo:
+---
 
-Abrir ajustes: icono de engranaje → Settings
+## Bloque 4: Copilot / Chat en VS Code {#bloque-4}
 
-Buscar 'Auto Save'
+### Autenticación
 
-Activar autoguardado (se sugiere modo 'afterDelay')
+- VS Code solicita iniciar sesión
+- Elegir “Continue with GitHub”
+- Autorizar en la web
+- Volver a VS Code: cuenta conectada
 
-## Bloque 4: Copilot/Chat en VS Code y sincronización con GitHub {#bloque-4}
+---
 
-Cómo autenticar
+### Sincronización
 
-Al intentar usar el chat de IA, VS Code solicita iniciar sesión
+- Sincroniza configuración y preferencias
+- Limitación: el historial del chat no siempre se sincroniza  
+  → alternativa: guardar conversaciones en `.md`
 
-Elegir 'Continue' con GitHub
+---
 
-Se abre una ventana web de GitHub para autorizar
+### Menciones en el chat
 
-Tras autorizar, volver a VS Code: la cuenta aparece conectada
+- `@workspace`: preguntar sobre el proyecto
+- `@vscode`: aprender a usar el IDE
 
-Qué permite la sincronización
+---
 
-Sincroniza configuración y preferencias del entorno entre equipos
+### Modelos y API keys
 
-Limitación: el historial/conversaciones del chat no siempre se sincroniza. Alternativa: guardar en fichero y recuperar
+- Modelos incluidos con GitHub Education:
+  - Funcionan sin pedir nada
+- Modelos externos:
+  - Piden API key
+  - No son necesarios
 
-Menciones de '@' en el chat
+Criterio didáctico:  
+Si pide API key, no es imprescindible. No tener API key no es un fallo.
 
-@workspace: preguntar sobre el contenido de la carpeta/proyecto abierto
+---
 
-@vscode: preguntar sobre cómo usar VS Code (útil para aprender el IDE)
-
-### Modelos disponibles y API keys
-
-En VS Code pueden aparecer varios modelos de IA. Dos casos distintos:
-
-Modelos incluidos con GitHub Education: funcionan sin pedir nada. Son los recomendados para empezar
-
-Modelos externos: piden API key. No son necesarios para el flujo básico
-
-Criterio didáctico:
-
-Si pide API key, no es imprescindible
-
-No tener API key no es un fallo
-
-No hay que 'perseguir modelos'
-
-## Bloque 5: Estructura de trabajo con carpetas y Markdown {#bloque-5}
+## Bloque 5: Estructura de trabajo con Markdown {#bloque-5}
 
 ### Crear README.md
 
-Abrir una carpeta de trabajo ('workspace') en VS Code
+- Abrir una carpeta de trabajo en VS Code
+- Crear `README.md` como punto de entrada
+- Trabajar siempre con texto plano
 
-Crear un fichero README.md como punto de entrada del proyecto
-
-Importante: trabajar con texto plano
+---
 
 ### Ventajas de Markdown
 
-Ligero, portable y fácil de versionar
+- Ligero y portable
+- Ideal para apuntes y documentación
+- Funciona bien con IA
+- Permite tablas, imágenes y fórmulas LaTeX
 
-Adecuado para apuntes, documentación y webs basadas en contenido
+---
 
-Evita formatos cerrados; funciona bien con IA
+### Vista previa de Markdown (muy importante)
 
-Tablas, LaTeX, previsualización
+- Abrir vista previa:
+  - **Ctrl + Shift + V**
+- Abrir vista previa lateral:
+  - **Ctrl + K, luego V**
+- Alternar foco editor / preview:
+  - **Ctrl + 1**, **Ctrl + 2**
 
-Markdown permite tablas que se renderizan en vista previa
+---
 
-Permite fórmulas con LaTeX embebido (usar $...$ / $$...$$)
+### Advertencia sobre extensiones
 
-Se trabaja con vista previa para ver el resultado renderizado
+Windows suele ocultar `.md` y `.txt`. Conviene enseñar a mostrarlas.
 
-Advertencia: muchos usuarios jóvenes no ven extensiones (.txt, .md) porque Windows las oculta; conviene conocerlas
+---
 
-Organización de pantalla en VS Code
-
-Configuración recomendada con cuatro zonas visibles:
+### Organización de pantalla recomendada
 
 | Zona | Contenido |
-| --- | --- |
-| Izquierda | Carpetas (explorador de archivos) |
-| Centro izquierda | Editor de Markdown |
-| Centro derecha | Vista previa (Ctrl + Shift + V) |
-| Derecha | Chat de IA (View → Chat) |
+|----|----------|
+| Izquierda | Explorador de archivos |
+| Centro izquierda | Editor Markdown |
+| Centro derecha | Vista previa |
+| Derecha | Chat de IA |
 
-Configuración adicional
+---
 
-Extensión recomendada: 'Markdown All in One' (autocompletado, atajos, mejor manejo de listas y tablas)
+### Configuración adicional
 
-Zoom de texto: Ctrl + o Ctrl - (o Settings → Font Size)
+- Extensión: **Markdown All in One**
+- Zoom:
+  - `Ctrl + +` / `Ctrl + -`
+- Tema:
+  - `Ctrl + Shift + P` → Color Theme
+- VS Code recuerda la disposición y archivos abiertos
 
-Tema visual: Ctrl + Shift + P → 'Color Theme'
+---
 
-Persistencia: VS Code recuerda la disposición, carpeta y archivos abiertos
+## Bloque 6: Instrucciones y agentes {#bloque-6}
 
-## Bloque 6: Instrucciones/Agentes {#bloque-6}
+### Qué son
 
-Qué son
+Archivos con reglas persistentes para guiar a la IA (`agents.md`, `copilot-instructions.md`).
 
-Ficheros que contienen reglas/instrucciones persistentes para que la IA las tenga en cuenta al trabajar en el proyecto (ej. agents.md / copilot-instructions.md).
+### Para qué sirven
 
-Para qué sirven
+- Evitar repetir criterios
+- Fijar idioma, tono y rigor
+- Definir estructura de salida
+- Exigir crítica y verificación
 
-Evitar repetir criterios en cada mensaje
+---
 
-Fijar idioma (español/gallego), tono, rigor, estilo pedagógico
+### Buenas prácticas
 
-Definir estructura de salida (apuntes + web + presentación)
+- Especificar idioma
+- Pedir rigor pedagógico
+- Señalar sesgos comunes:
+  - Capitalización inglesa
+  - Simplificación excesiva
 
-Incluir reglas de calidad: señalar limitaciones, ser crítico, proponer verificación
+---
 
-Buenas prácticas
+### Reglas globales vs por chat
 
-Especificar idioma de trabajo y norma
+- Globales: siempre activas
+- Por chat: sesiones separadas
 
-Pedir rigor y enfoque pedagógico sin perder precisión
+---
 
-Pedir que sea crítico y señale errores o límites
+### Patrón recomendado
 
-Señalar sesgos comunes: Títulos en 'Title Case' del inglés (capitalización incorrecta para español/gallego); Nivel educativo: tienden a simplificar; pedir 1-2 cursos por encima y luego adaptar
+- Chat A: generación
+- Chat B: crítica
+- Chat C: adaptación
 
-### Diferencia entre reglas globales vs por chat
+---
 
-Reglas globales: fichero de instrucciones que se adjunta 'siempre'
+## Bloque 7: Estrategia de prompting {#bloque-7}
 
-Reglas por chat/agente: sesiones separadas con objetivos distintos; útil para no contaminar trabajos
+### Diseño vs iteración
 
-Patrón recomendado
+Mejor diseñar bien objetivos y criterios antes de ejecutar.  
+La iteración sobre borradores es menos efectiva.
 
-Chat A (generación inicial): crear apuntes o estructura
-
-Chat B (contrarian prompting): criticar, detectar errores, lagunas
-
-Chat C (adaptación): convertir a web o presentación
-
-Ventaja: evita sesgos por contexto previo, cada chat tiene un rol claro
-
-## Bloque 7: Estrategia de prompting aplicada a educación {#bloque-7}
-
-Diseño exhaustivo vs iterar sobre borrador
-
-Recomendación central: funciona mejor diseñar bien lo que se quiere (objetivos, criterios, contexto, fuentes) y luego pedir a la IA que lo ejecute.
-
-La alternativa común ('crea borrador y corrige') se considera menos efectiva. Cuanto más contexto y criterios se aporten, mejor el resultado.
+---
 
 ### Contrarian prompting
 
-Técnica recomendada para detectar fallos:
+- Generar versión 1
+- Pasarla a otro modelo
+- Pedir crítica dura
 
-Generar una primera versión con un modelo
-
-Pasarla a otro modelo distinto y pedirle que 'destroce' el texto: detectar fallos, imprecisiones, mejoras
-
-Motivo: los modelos tienen sesgo a 'darte la razón'; un segundo modelo criticando reduce ese sesgo
+---
 
 ### Sesgos por nivel educativo
 
-Observación: tienden a dar materiales demasiado simples (posible sesgo por corpus/sistema educativo).
+- Tienden a simplificar
+- Pedir 1–2 cursos por encima y luego adaptar
 
-Estrategia: pedir un nivel más alto (1-2 cursos por encima) y luego simplificar
+---
 
-Riesgo de acumulación de errores
+### Riesgo de acumulación de errores
 
-Si una frase inicial tiene un error y no se corrige, la IA puede usarlo como premisa y el fallo se amplifica
+Un error inicial se amplifica.  
+Revisar y corregir por fases.
 
-Buen hábito: revisar por pasos, corregir antes de seguir
+---
 
 ## Bloque 8: Legislación educativa {#bloque-8}
 
-### Advertencia: riesgo de inventar normas
+⚠️ Alto riesgo de inventar normas si no se aportan documentos.
 
-Alto riesgo de 'alucinación' en legislación si no se aportan documentos.
+### Flujo recomendado
 
-Se insiste en revisar especialmente todo lo legislativo.
+1. Descargar PDFs oficiales
+2. Convertir a TXT o Markdown
+3. Guardar en el proyecto
 
-Recomendación: descargar PDFs y convertir a TXT/Markdown
+---
 
-Flujo recomendado:
+### Por qué TXT consume menos tokens
 
-Descargar PDFs oficiales
+PDF requiere extracción de texto; TXT se procesa directamente.
 
-Convertir a texto plano (TXT o Markdown)
+---
 
-Guardar en carpeta del proyecto para que forme parte del contexto
+### Estructura de carpetas
 
-Por qué TXT consume menos tokens que PDF
-
-Para la IA, leer PDF implica extraer texto (más costoso)
-
-Texto plano se procesa mejor, más rápido y con menos coste
-
-### Propuesta de estructura de carpeta
-
-Carpeta legislacion/ con:
-
-Documentos convertidos a .txt o .md
-
-Resúmenes 'clave' generados y revisados
-
-Carpeta protocolos/ separada para no mezclar
+```text
+legislacion/
+  ├── normas.md
+  ├── decretos.txt
+protocolos/
+``` 
 
 ## Bloque 9: Generación de apuntes y recursos {#bloque-9}
 
@@ -380,404 +394,565 @@ Carpeta protocolos/ separada para no mezclar
 
 Mermaid permite describir diagramas en texto y renderizarlos como gráficos:
 
-Diagramas de flujo
+- Diagramas de flujo
+- Diagramas de clases
+- Diagramas de secuencia
 
-Clases
+**Ventaja clave:**  
+La IA trabaja mejor con **estructuras textuales** que con píxeles. El diagrama es reproducible, editable y versionable.
 
-Secuencias
-
-Ventaja: la IA trabaja mejor con estructuras textuales que con píxeles
+---
 
 ### Python para generar figuras
 
-En lugar de generar 'imágenes' directamente con un modelo de imagen, se propone generar código que dibuje figuras.
+En lugar de generar imágenes directamente con modelos gráficos, se recomienda generar **código que dibuje las figuras**.
 
-Flujo recomendado:
+**Flujo recomendado:**
 
-Crear un script Python (ej. generar_figuras.py)
+1. Crear un script Python (por ejemplo `generar_figuras.py`)
+2. Instalar dependencias con `pip`:
+   - `numpy`
+   - `matplotlib`
+3. Ejecutar el script para generar archivos `.png`
+4. Insertar las imágenes en Markdown enlazando los `.png`
 
-Instalar dependencias con pip (numpy, matplotlib)
+**Ventaja didáctica:**  
+Modificar código es mejor que editar imágenes.  
+El código contiene la **estructura y la intención**; el PNG es solo el resultado.
 
-Ejecutar el script para generar .png
+---
 
-Insertar las imágenes en Markdown con enlaces a los .png
+### Estrategia para matemáticas, diagramas y gráficas
 
-Ventaja: pasar código vs pasar PNG (píxeles). Si quieres modificar una figura, mejor modificar el código. El código contiene la estructura y la intención; el PNG es solo resultado.
-
-Estrategia para matemáticas, diagramas y gráficas
-
-Cuando se incluyen matemáticas o gráficas hay tres niveles posibles:
+Cuando se incluyen matemáticas o gráficas hay **tres niveles posibles**:
 
 | Nivel | Herramienta | Uso |
-| --- | --- | --- |
-| Nivel 1 | LaTeX embebido | Expresiones matemáticas, ecuaciones, demostraciones breves. Se integran en el texto |
-| Nivel 2 | Mermaid | Flujos, relaciones, procesos, estructuras lógicas. Describen ideas, no datos |
-| Nivel 3 | Python + Matplotlib | Funciones matemáticas, distribuciones, comparativas, datos reales o simulados |
+|-----|------------|-----|
+| Nivel 1 | LaTeX embebido | Expresiones matemáticas, ecuaciones, demostraciones breves |
+| Nivel 2 | Mermaid | Flujos, relaciones, procesos, estructuras lógicas |
+| Nivel 3 | Python + Matplotlib | Funciones matemáticas, datos reales o simulados |
+
+---
 
 ### Publicar en GitHub desde VS Code
 
-VS Code ofrece botón/flujo de 'Publish to GitHub' si estás autenticado.
+VS Code ofrece un flujo directo de **“Publish to GitHub”** si estás autenticado.
 
-Advertencia importante:
+**Advertencia importante:**
 
-Git/GitHub es potente, pero cuando surge un conflicto serio, incluso técnicos se frustran
+- Git y GitHub son herramientas potentes
+- Cuando surge un conflicto serio, incluso perfiles técnicos se frustran
+- La IA puede ayudar, pero existe complejidad real
+- Revisar siempre antes de aceptar acciones automáticas
 
-La IA puede ayudar, pero hay complejidad real
+---
 
 ## Bloque 10: Reutilización del contenido en múltiples formatos {#bloque-10}
 
-El núcleo del enfoque es que el contenido se escribe una sola vez y se reutiliza para distintos fines.
+El núcleo del enfoque es que el contenido se escribe **una sola vez** y se reutiliza.
 
 | Formato | Uso |
-| --- | --- |
-| Apuntes base | Fuente única del conocimiento en Markdown. Aquí se escribe y revisa todo |
-| Web (Docusaurus) | Páginas navegables, índice lateral, enlaces entre temas. Para consulta, alumnado, actualización continua |
-| Presentaciones | Reveal.js: una idea por diapositiva, estructura jerárquica. Para clases presenciales, exposiciones |
-| PDF | Se genera a partir de web o presentación. Para impresión, entrega formal |
+|------|----|
+| Apuntes base | Fuente única del conocimiento en Markdown |
+| Web (Docusaurus) | Consulta navegable para alumnado y actualización continua |
+| Presentaciones | Reveal.js: una idea por diapositiva |
+| PDF | Generado desde web o presentación |
+
+---
 
 ## Bloque 11: Web de apuntes con Docusaurus {#bloque-11}
 
-Docusaurus resuelve un problema concreto: 'Tengo muchos apuntes y quiero que se lean como un sitio web ordenado.'
+Docusaurus resuelve el problema:
 
-Qué hace Docusaurus
+> “Tengo muchos apuntes y quiero que se lean como un sitio web ordenado.”
 
-Toma archivos Markdown
+### Qué hace Docusaurus
 
-Crea un menú lateral automático
+- Toma archivos Markdown
+- Crea un menú lateral automático
+- Genera una web estática
+- Permite búsqueda y navegación
 
-Genera una web estática
+---
 
-Permite búsqueda y navegación
+### Por qué es adecuado para apuntes
 
-Por qué es adecuado para apuntes
+- No requiere base de datos
+- No hay que programar páginas una a una
+- Se actualiza con solo modificar un archivo de texto
 
-No requiere base de datos
+---
 
-No hay que programar páginas una a una
+### Publicación y actualización automática
 
-Se actualiza con solo cambiar un archivo de texto
+**Desplegar** significa convertir archivos en una web accesible por URL.
 
-Publicación y actualización automática
+**Flujo real:**
 
-'Desplegar' significa convertir archivos en una web accesible por URL.
+1. Se modifica un archivo Markdown
+2. Se sube el cambio a GitHub
+3. GitHub ejecuta un proceso automático
+4. La web se regenera sola
 
-Flujo real:
+---
 
-Se modifica un archivo Markdown
+### Valor pedagógico
 
-Se sube el cambio a GitHub
+- El alumnado ve siempre la versión vigente
+- El docente corrige una vez y se refleja en todo
 
-GitHub ejecuta un proceso automático
-
-La web se regenera sola
-
-Valor pedagógico:
-
-El alumnado ve siempre la versión vigente
-
-El docente corrige una vez y se refleja en todo
+---
 
 ## Bloque 12: Presentaciones {#bloque-12}
 
 ### Opciones tradicionales
 
-Para presentaciones 'tradicionales' y visuales:
+Para presentaciones visuales tradicionales:
 
-Canva y Gamma funcionan bien
+- Canva
+- Gamma
+- NotebookLM (exporta a Google Slides)
 
-NotebookLM puede generar y exportar a Google Slides para editar después
+---
 
 ### Reveal.js: presentaciones como web
 
-Reveal.js permite hacer presentaciones como web:
+Reveal.js permite crear presentaciones como web:
 
-Pantalla completa en navegador
+- Pantalla completa en navegador
+- Navegación por diapositivas
+- Jerarquía (derecha / abajo para subniveles)
+- Código, transiciones y elementos web
 
-Navegación por diapositivas
+**Ventaja para trabajar con IA:**  
+Al estar basado en texto/HTML/Markdown, la IA lo manipula mejor que un lienzo gráfico.
 
-Posibilidad de jerarquía (mover 'derecha' o 'abajo' para subniveles)
+---
 
-Admite código, transiciones y elementos web
+### Exportación a PDF desde Reveal.js
 
-Ventaja para trabajar con IA:
+1. Abrir la presentación en el navegador
+2. Activar modo impresión
+3. Guardar como PDF
 
-Al ser estructura basada en texto/HTML/Markdown, la IA la manipula mejor que un lienzo gráfico
+**Advertencias habituales:**
 
-Exportación a PDF desde Reveal.js
+- Revisar tamaño de página
+- Comprobar saltos de diapositiva
+- Verificar fuentes
 
-Abrir la presentación en el navegador
+---
 
-Activar modo impresión
-
-Guardar como PDF
-
-Advertencias habituales:
-
-Revisar tamaño de página
-
-Comprobar saltos de diapositiva
-
-Verificar fuentes
-
-### Problemas frecuentes y soluciones (FAQ) {#faq}
+## Problemas frecuentes y soluciones (FAQ) {#faq}
 
 | Problema | Solución |
-| --- | --- |
-| La licencia educativa falla o la deniegan | Revisar nombre exacto en perfil y 'billing', usar mejor cámara, probar documento alternativo, asumir tiempos de espera, reintentar |
-| La IA inventa datos concretos (especialmente legislación) | Exigir documentos oficiales en el contexto; revisar y verificar; preparar material previo en herramientas de búsqueda/documentos |
-| El contenido sale demasiado simple | Pedir nivel más alto (1-2 cursos por encima) y luego adaptar |
-| Cambios en Git se complican | Empezar por flujos simples; aceptar que los conflictos existen; pedir ayuda o usar IA con cautela; revisar antes de aprobar acciones |
-| La IA mezcla contextos de chats | Separar sesiones (agentes/chats) por proyecto o propósito; usar instrucciones claras de qué debe ignorar |
+|--------|---------|
+| La licencia educativa falla | Revisar nombre exacto, cámara, documento, tiempos y reintentos |
+| La IA inventa legislación | Exigir documentos oficiales en el contexto |
+| El contenido sale demasiado simple | Pedir nivel 1–2 cursos por encima |
+| Cambios en Git se complican | Empezar por flujos simples, revisar antes de aceptar |
+| La IA mezcla contextos | Separar chats o agentes por propósito |
+
+---
 
 ## Checklist final de trabajo recomendado {#checklist-final}
 
-Crear cuenta GitHub y añadir/verificar correos necesarios
+- Crear cuenta de GitHub y verificar correos
+- Solicitar licencia educativa (si aplica)
+- Instalar VS Code y activar “Open with Code”
+- Activar Auto Save
+- Autenticar VS Code con GitHub
+- Crear carpeta de proyecto
+- Crear `README.md`
+- Crear fichero de instrucciones
+- Preparar legislación en TXT o Markdown
+- Generar apuntes por temas
+- Usar Mermaid para diagramas
+- Usar Python para figuras
+- Elegir formato final (web, presentación, PDF)
 
-Solicitar licencia educativa (si aplica) y preparar reintentos con checklist
-
-Instalar VS Code en Windows y activar 'Open with Code'
-
-Activar Auto Save en VS Code
-
-Autenticar VS Code con GitHub para habilitar Copilot/Chat y sincronización
-
-Crear una carpeta de proyecto y abrirla en VS Code
-
-Crear README.md y empezar apuntes en Markdown
-
-Crear fichero de instrucciones con: idioma, rigor, estilo de títulos, necesidad de crítica/limitaciones, estructura del proyecto
-
-Si hay legislación: descargar PDFs oficiales, convertir a TXT/Markdown, guardar en legislacion/
-
-Generar apuntes por temas con IA, revisando por pasos
-
-Para diagramas: usar Mermaid cuando convenga
-
-Para figuras/gráficas: generar con Python + librerías, guardar y enlazar desde .md
-
-Para presentaciones: elegir herramienta según objetivo (Canva/Gamma/NotebookLM o Reveal.js)
+---
 
 ## Glosario de términos y siglas {#glosario}
 
 | Término | Definición |
-| --- | --- |
-| Git | Sistema de control de versiones (historial de cambios) |
+|-------|-----------|
+| Git | Sistema de control de versiones |
 | GitHub | Plataforma en la nube para repositorios Git |
-| Repositorio | Carpeta/proyecto con historial (Git) alojable en GitHub |
-| IDE | Entorno de desarrollo (editor con herramientas); VS Code es un IDE/editor |
+| Repositorio | Proyecto con historial Git |
+| IDE | Entorno de desarrollo |
 | VS Code | Visual Studio Code |
-| Copilot/Chat | Asistente de IA integrado en VS Code (conexión a modelos) |
-| Modelo | Motor de IA (familias GPT, Claude, Gemini) |
-| Tokens | Unidad de consumo de IA (coste/limitaciones por texto procesado) |
-| Markdown | Formato de texto plano para documentación |
+| Copilot / Chat | Asistente de IA integrado en VS Code |
+| Modelo | Motor de IA (GPT, Claude, Gemini) |
+| Tokens | Unidad de consumo de IA |
+| Markdown | Formato de texto plano |
 | LaTeX | Sintaxis para fórmulas matemáticas |
-| Mermaid | Lenguaje de diagramas en texto que se renderiza a gráfico |
-| Python | Lenguaje de programación útil para scripts y generación de figuras/datos |
-| PIP | Gestor de paquetes de Python para instalar librerías |
-| Dependencias | Código de terceros reutilizable (ej. Matplotlib, NumPy) |
-| Fork | Variante de un proyecto basada en otro (Antigravity como 'fork' de VS Code) |
-| Canvas | Interfaz de creación/edición visual desde chat (ChatGPT/Gemini/Claude) |
+| Mermaid | Lenguaje de diagramas en texto |
+| Python | Lenguaje para scripts y figuras |
+| PIP | Gestor de paquetes de Python |
+| Dependencias | Librerías externas reutilizables |
+| Fork | Variante de un proyecto |
+| Canvas | Interfaz visual desde chat |
+
+---
 
 ## Ejercicio guiado: Creación completa de una web de apuntes {#ejercicio-guiado}
 
-CREACIÓN COMPLETA DE UNA WEB DE APUNTES CON GITHUB PAGES, DOCUSAURUS, REVEAL.JS Y PDF USANDO IA DESDE VS CODE
-
-Objetivo del ejercicio
+### Objetivo del ejercicio
 
 Crear desde cero un proyecto educativo que:
 
-tenga apuntes en Markdown como fuente única
+- Use Markdown como fuente única
+- Genere automáticamente:
+  - Web con Docusaurus (GitHub Pages)
+  - Presentaciones con Reveal.js
+  - Un PDF con todos los apuntes
+- Se despliegue automáticamente al hacer cambios
+- Sea creado y configurado **por IA desde VS Code**
 
-genere automáticamente: una web pública con Docusaurus en GitHub Pages, presentaciones interactivas con Reveal.js (una por tema), un PDF con todos los apuntes
+El docente **no escribe código a mano**: dirige, revisa y valida.
 
-se despliegue automáticamente al hacer cambios
+---
 
-y cuya estructura, configuración y scripts sean creados por la IA desde VS Code, no a mano
+### Fases del ejercicio
 
-El docente no escribe código, no crea carpetas manualmente, no configura GitHub Actions a mano: dirige el proceso con instrucciones claras y revisa.
+El ejercicio se estructura en fases progresivas:
 
-Requisitos previos del ejercicio
+1. Crear carpeta vacía
+2. Diseñar el proyecto con IA
+3. Crear estructura automática
+4. Generar apuntes en Markdown
+5. Crear figuras con Python
+6. Adaptar apuntes a Docusaurus
+7. Crear presentaciones Reveal.js
+8. Generar PDF
+9. Configurar GitHub Pages con IA
+10. Publicar el repositorio
+11. Exportar presentaciones a PDF
 
-VS Code instalado
+---
 
-Cuenta de GitHub activa (preferiblemente con licencia educativa)
+## Objetivo del ejercicio
 
-VS Code iniciado sesión con GitHub
+Crear desde cero un proyecto educativo que:
 
-Copilot / Chat disponible en VS Code
+- Tenga **apuntes en Markdown** como **fuente única**
+- Genere automáticamente:
+  - Una **web pública** con Docusaurus en GitHub Pages
+  - **Presentaciones interactivas** con Reveal.js (una por tema)
+  - Un **PDF** con todos los apuntes
+- Se **despliegue automáticamente** al hacer cambios
+- Tenga su **estructura, configuración y scripts creados por la IA desde VS Code**, no a mano
 
-No es necesario:
+**Rol del docente:**  
+El docente **no escribe código**, **no crea carpetas manualmente** y **no configura GitHub Actions a mano**.  
+Dirige el proceso con instrucciones claras, revisa y valida.
 
-saber Node.js
+---
 
-saber Python
+## Requisitos previos del ejercicio
 
-saber Git avanzado
+### Necesario
 
-### Fase 1: Crear el proyecto base (carpeta vacía)
+- VS Code instalado
+- Cuenta de GitHub activa  
+  (preferiblemente con licencia educativa)
+- VS Code iniciado sesión con GitHub
+- Copilot / Chat disponible en VS Code
+
+---
+
+## Fase 1: Crear el proyecto base (carpeta vacía)
 
 En el sistema operativo:
 
-crear una carpeta vacía (por ejemplo: proyecto-apuntes-web)
+1. Crear una carpeta vacía  
+   Ejemplo: `proyecto-apuntes-web`
+2. Abrir la carpeta con VS Code:
+   - Botón derecho → **Open with Code**
 
-Abrir esa carpeta con VS Code: botón derecho → "Open with Code"
+En este punto:
 
-En este punto: no hay subcarpetas, no hay archivos, no hay configuración.
+- No hay subcarpetas
+- No hay archivos
+- No hay configuración
 
-### Fase 2: Pedir a la IA que diseñe el proyecto
+---
 
-Abrir el chat de IA en VS Code.
+## Fase 2: Pedir a la IA que diseñe el proyecto
 
-Primer prompt (diseño global)
+1. Abrir el **chat de IA** en VS Code
 
-Texto literal recomendado:
+### Primer prompt (diseño global)
 
-"Quiero crear un proyecto educativo basado en Markdown que genere: una web de apuntes con Docusaurus publicada en GitHub Pages, presentaciones interactivas con Reveal.js (una por tema), un PDF con todos los apuntes. Diseña la estructura completa del proyecto, indicando carpetas, herramientas y flujo de trabajo. No crees aún los archivos: solo explícame el plan."
+En la caja del chat de VS Code vamos a utilizar el modo Plan (no Agent) con la IA más potente (3X). Es mejor emplear más tokens en tener un proyecto bien definido y después utilizar el modo Agente con otra IA que sea menos potente para ejecutarlo.
 
-La IA responde con: explicación del flujo, propuesta de estructura, tecnologías necesarias.
+**Texto literal recomendado:**
 
-El docente: lee, valida que encaja con lo que quiere, pide ajustes si es necesario.
+```text
+Quiero crear un proyecto educativo basado en Markdown que genere:
+una web de apuntes con Docusaurus publicada en GitHub Pages,
+presentaciones interactivas con Reveal.js (una por tema),
+un PDF con todos los apuntes.
+Diseña la estructura completa del proyecto,
+indicando carpetas, herramientas y flujo de trabajo.
+No crees aún los archivos: solo explícame el plan.
+```
+### Resultado esperado
 
-### Fase 3: Creación automática de la estructura del proyecto
+La IA responde con:
 
-Segundo prompt (ejecución)
+- Explicación del flujo general del proyecto
+- Propuesta de estructura de carpetas
+- Tecnologías necesarias
 
-"Ahora crea la estructura completa del proyecto según lo explicado. Incluye: carpeta de apuntes en Markdown, carpeta para Docusaurus, carpeta de presentaciones Reveal.js, carpeta de recursos (imágenes y scripts), scripts para generar PDF, archivos de configuración necesarios. Crea también un README.md explicativo."
+**Rol del docente:**
 
-La IA: crea carpetas, crea archivos, muestra los cambios propuestos en VS Code.
+- Lee la propuesta
+- Valida que encaja con sus objetivos
+- Pide ajustes si es necesario
 
-El docente: revisa, acepta los cambios.
+---
 
-En este momento ya aparece una estructura equivalente a:
+## Fase 3: Creación automática de la estructura del proyecto
 
+### Segundo prompt (ejecución)
+
+Ahora es cuando escogemos el modo Agent con un modelo de IA que tenga un menor consumo (1X)
+
+```text
+Ahora crea la estructura completa del proyecto según lo explicado.
+Incluye:
+- carpeta de apuntes en Markdown
+- carpeta para Docusaurus
+- carpeta de presentaciones Reveal.js
+- carpeta de recursos (imágenes y scripts)
+- scripts para generar el PDF
+- archivos de configuración necesarios
+Crea también un README.md explicativo.
+```
+
+### Resultado
+
+#### La IA:
+
+- Crea carpetas
+- Crea archivos
+- Muestra los cambios propuestos en VS Code
+
+#### El docente:
+
+- Revisa
+- Acepta los cambios
+
+### Estructura resultante aproximada
+
+```
 apuntes/
-
 docs/
-
 presentacion/
-
 recursos/
-
 scripts/
-
 package.json
-
 docusaurus.config.js
-
 sidebars.js
-
 README.md
+```
 
-### Fase 4: Crear los apuntes (fuente única)
+---
 
-En la carpeta apuntes/:
+## Fase 4: Crear los apuntes (fuente única)
 
-PROMPT TIPO:
+En la carpeta `apuntes/`:
 
-"Crea los apuntes del Tema 1 en Markdown. Lenguaje claro, rigor conceptual, con ejemplos. Incluye: texto explicativo, tablas, fórmulas matemáticas con LaTeX si procede, indicaciones para añadir figuras."
+### Prompt tipo
 
-La IA crea 01_tema.md.
+```
+Crea los apuntes del Tema 1 en Markdown.
+Lenguaje claro, rigor conceptual, con ejemplos.
+Incluye:
+- texto explicativo
+- tablas
+- fórmulas matemáticas con LaTeX si procede
+- indicaciones para añadir figuras
+```
 
-Se repite el proceso para cada tema.
+La IA crea el archivo: `01_tema.md`
 
-IMPORTANTE:
+Este proceso se repite para cada tema.
 
-estos archivos son la fuente única: la web, las presentaciones, el PDF salen de aquí.
+### Importante
 
-### Fase 5: Generación de figuras y gráficas con Python
+Estos archivos son la **fuente única** del proyecto:
 
-PROMPT TIPO:
+- La web
+- Las presentaciones
+- El PDF
 
-"Genera un script en Python que cree las figuras necesarias para los apuntes: gráficas matemáticas, esquemas simples. Usa matplotlib y guarda las imágenes en la carpeta recursos/imagenes. Incluye comentarios en el código."
+Todo se genera a partir de estos Markdown.
 
-La IA: crea recursos/generar_figuras.py, incluye importaciones, guarda PNGs.
+---
 
-Luego: esas imágenes se enlazan desde los .md.
+## Fase 5: Generación de figuras y gráficas con Python
 
-VENTAJA DIDÁCTICA:
+### Prompt tipo
 
-si cambia el ejercicio, se regenera la figura
+```
+Genera un script en Python que cree las figuras necesarias para los apuntes:
+gráficas matemáticas y esquemas simples.
+Usa matplotlib y guarda las imágenes en la carpeta recursos/imagenes.
+Incluye comentarios en el código.
+```
 
-no se edita una imagen a mano
+### La IA:
 
-### Fase 6: Adaptar los apuntes para Docusaurus
+- Crea `recursos/generar_figuras.py`
+- Incluye importaciones
+- Genera archivos `.png`
 
-PROMPT TIPO:
+### Después:
 
-"Adapta los apuntes de la carpeta apuntes/ para que se usen en Docusaurus. Crea versiones en docs/apuntes/ con el frontmatter necesario. Configura el sidebar con todos los temas."
+Las imágenes se enlazan desde los archivos `.md`
 
-La IA: copia/adapta los Markdown, añade frontmatter, configura navegación.
+### Ventaja didáctica
 
-### Fase 7: Crear las presentaciones con Reveal.js
+- Si cambia el ejercicio, se regenera la figura
+- No se edita una imagen a mano
 
-PROMPT TIPO:
+---
 
-"Para cada tema, crea una presentación en Reveal.js a partir de los apuntes. Una presentación por tema. Incluye: una diapositiva por idea clave, navegación clara, índice general."
+## Fase 6: Adaptar los apuntes para Docusaurus
 
-La IA: crea archivos HTML en presentacion/, crea un index.html con enlaces a todas.
+### Prompt tipo
 
-Estas presentaciones: se ven en navegador, se integran en la web, se pueden imprimir a PDF.
+```
+Adapta los apuntes de la carpeta apuntes/ para que se usen en Docusaurus.
+Crea versiones en docs/apuntes/ con el frontmatter necesario.
+Configura el sidebar con todos los temas.
+```
 
-### Fase 8: Generación del PDF
+### La IA:
 
-PROMPT TIPO:
+- Copia y adapta los archivos Markdown
+- Añade el frontmatter requerido
+- Configura la navegación lateral
 
-"Crea un script que genere un PDF con todos los apuntes. Usa Pandoc y LaTeX. El PDF debe incluir: portada, índice, todos los temas en orden."
+---
 
-La IA: crea scripts/build-pdf.py, o comandos npm equivalentes.
+## Fase 7: Crear las presentaciones con Reveal.js
 
-El PDF se genera automáticamente en el flujo de build.
+### Prompt tipo
 
-### Fase 9: Configurar GitHub Pages con IA
+```
+Para cada tema, crea una presentación en Reveal.js a partir de los apuntes.
+Una presentación por tema.
+Incluye:
+- una diapositiva por idea clave
+- navegación clara
+- índice general
+```
 
-"Configura el proyecto para que se despliegue automáticamente en GitHub Pages usando GitHub Actions. Crea el workflow necesario en .github/workflows/deploy.yml. El despliegue debe ejecutarse en cada push a main."
+### La IA:
 
-La IA: crea el workflow, configura Node, Python, ejecuta build web, PDF y presentaciones, publica en GitHub Pages.
+- Crea archivos HTML en la carpeta `presentacion/`
+- Crea un `index.html` con enlaces a todas las presentaciones
 
-El docente: NO escribe YAML a mano, solo revisa.
+### Las presentaciones:
 
-### Fase 10: Publicar el repositorio
+- Se visualizan en el navegador
+- Se integran en la web
+- Se pueden exportar a PDF
 
-En VS Code:
+---
 
-botón "Publish to GitHub"
+## Fase 8: Generación del PDF
 
-o prompt: "Publica este proyecto en un repositorio nuevo en mi cuenta de GitHub."
+### Prompt tipo
 
-Después: ir a GitHub → Settings → Pages, seleccionar "GitHub Actions".
+```
+Crea un script que genere un PDF con todos los apuntes.
+Usa Pandoc y LaTeX.
+El PDF debe incluir:
+- portada
+- índice
+- todos los temas en orden
+```
 
-Resultado:
+### La IA:
 
-la web aparece en la URL del repositorio
+- Crea `scripts/build-pdf.py` o comandos equivalentes
+- Integra la generación del PDF en el flujo de build
 
-cada cambio actualiza automáticamente
+El PDF se genera automáticamente.
 
-### Fase 11: Exportar presentaciones a PDF
+---
+
+## Fase 9: Configurar GitHub Pages con IA
+
+### Prompt tipo
+
+```
+Configura el proyecto para que se despliegue automáticamente
+en GitHub Pages usando GitHub Actions.
+Crea el workflow necesario en .github/workflows/deploy.yml.
+El despliegue debe ejecutarse en cada push a main.
+```
+
+### La IA:
+
+- Crea el workflow
+- Configura Node y Python
+- Ejecuta la build de la web, el PDF y las presentaciones
+- Publica el resultado en GitHub Pages
+
+El docente no escribe YAML, solo revisa.
+
+---
+
+## Fase 10: Publicar el repositorio
+
+Desde VS Code:
+
+- Botón **"Publish to GitHub"**
+
+o mediante prompt:
+
+```
+Publica este proyecto en un repositorio nuevo en mi cuenta de GitHub.
+```
+
+### Después:
+
+1. Ir a GitHub → Settings → Pages
+2. Seleccionar GitHub Actions
+
+### Resultado
+
+- La web aparece en la URL del repositorio
+- Cada cambio se despliega automáticamente
+
+---
+
+## Fase 11: Exportar presentaciones a PDF
 
 Para cada presentación Reveal.js:
 
-abrir en navegador
-
-activar modo impresión
-
-exportar a PDF
+1. Abrir la presentación en el navegador
+2. Activar modo impresión
+3. Exportar a PDF
 
 No se necesita software adicional.
 
-### Resultado final del ejercicio
+---
+
+## Resultado final del ejercicio
 
 Un proyecto que:
 
-se edita en Markdown
+- ✅ Se edita en Markdown
+- ✅ Se publica como web
+- ✅ Genera presentaciones
+- ✅ Genera PDF
+- ✅ Se mantiene automáticamente
+- ✅ Puede reutilizarse cada curso
 
-se publica como web
-
-genera presentaciones
-
-genera PDF
-
-se mantiene solo
-
-y puede reutilizarse cada curso
-
-Exactamente el modelo del README que has compartido.
