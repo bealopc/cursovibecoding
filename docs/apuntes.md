@@ -15,7 +15,7 @@ sidebar_position: 1
 
 ## Índice
 
-<div style="text-align: left">
+<div style={{textAlign: 'left'}}>
 
 - [Bloque 1: Licencia educativa GitHub](#bloque-1)
 - [Bloque 2: Diferencia entre GitHub y VS Code](#bloque-2)
