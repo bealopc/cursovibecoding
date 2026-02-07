@@ -13,7 +13,24 @@ sidebar_position: 1
 **VS Code + GitHub + IA**  
 *Apuntes operativos del curso*
 
-Objetivos de la sesión
+## Índice
+
+- [Bloque 1: Licencia educativa GitHub](#bloque-1)
+- [Bloque 2: Diferencia entre GitHub y VS Code](#bloque-2)
+- [Bloque 3: Instalación y configuración de VS Code (Windows)](#bloque-3)
+- [Bloque 4: Copilot/Chat en VS Code y sincronización con GitHub](#bloque-4)
+- [Bloque 5: Estructura de trabajo con carpetas y Markdown](#bloque-5)
+- [Bloque 6: Instrucciones/Agentes](#bloque-6)
+- [Bloque 7: Estrategia de prompting aplicada a educación](#bloque-7)
+- [Bloque 8: Legislación educativa](#bloque-8)
+- [Bloque 9: Generación de apuntes y recursos](#bloque-9)
+- [Bloque 10: Reutilización del contenido en múltiples formatos](#bloque-10)
+- [Bloque 11: Web de apuntes con Docusaurus](#bloque-11)
+- [Bloque 12: Presentaciones](#bloque-12)
+
+## Introducción
+
+### Objetivos de la sesión
 
 Este curso tiene como propósito familiarizar a los docentes con un conjunto de herramientas modernas para crear y gestionar contenido educativo de forma eficiente, aprovechando la inteligencia artificial.
 
@@ -85,7 +102,7 @@ NotebookLM
 
 Recomendado para trabajar con muchos documentos (ej. legislación), resumir y generar materiales en Markdown. Útil como paso previo.
 
-## Bloque 1: Licencia educativa GitHub
+## Bloque 1: Licencia educativa GitHub {#bloque-1}
 
 La obtención de la licencia educativa puede presentar dificultades. Esta sección recopila los problemas más comunes y sus soluciones.
 
@@ -145,7 +162,7 @@ Usar alternativas según tarea: Para buscar información: Perplexity o Gemini; P
 
 Apoyarse en intercambio de experiencias en comunidad
 
-## Bloque 2: Diferencia entre GitHub y VS Code
+## Bloque 2: Diferencia entre GitHub y VS Code {#bloque-2}
 
 Es fundamental entender que son herramientas distintas que se complementan:
 
@@ -161,7 +178,7 @@ Git ≈ 'Word (control de versiones/historial)'
 
 GitHub ≈ 'nube donde sincronizas y compartes'
 
-## Bloque 3: Instalación y configuración de VS Code (Windows)
+## Bloque 3: Instalación y configuración de VS Code (Windows) {#bloque-3}
 
 Pasos de instalación
 
@@ -189,7 +206,7 @@ Buscar 'Auto Save'
 
 Activar autoguardado (se sugiere modo 'afterDelay')
 
-## Bloque 4: Copilot/Chat en VS Code y sincronización con GitHub
+## Bloque 4: Copilot/Chat en VS Code y sincronización con GitHub {#bloque-4}
 
 Cómo autenticar
 
@@ -229,7 +246,7 @@ No tener API key no es un fallo
 
 No hay que 'perseguir modelos'
 
-## Bloque 5: Estructura de trabajo con carpetas y Markdown
+## Bloque 5: Estructura de trabajo con carpetas y Markdown {#bloque-5}
 
 ### Crear README.md
 
@@ -278,7 +295,7 @@ Tema visual: Ctrl + Shift + P → 'Color Theme'
 
 Persistencia: VS Code recuerda la disposición, carpeta y archivos abiertos
 
-## Bloque 6: Instrucciones/Agentes
+## Bloque 6: Instrucciones/Agentes {#bloque-6}
 
 Qué son
 
@@ -320,7 +337,7 @@ Chat C (adaptación): convertir a web o presentación
 
 Ventaja: evita sesgos por contexto previo, cada chat tiene un rol claro
 
-## Bloque 7: Estrategia de prompting aplicada a educación
+## Bloque 7: Estrategia de prompting aplicada a educación {#bloque-7}
 
 Diseño exhaustivo vs iterar sobre borrador
 
@@ -350,7 +367,7 @@ Si una frase inicial tiene un error y no se corrige, la IA puede usarlo como pre
 
 Buen hábito: revisar por pasos, corregir antes de seguir
 
-## Bloque 8: Legislación educativa
+## Bloque 8: Legislación educativa {#bloque-8}
 
 ### Advertencia: riesgo de inventar normas
 
@@ -384,7 +401,7 @@ Resúmenes 'clave' generados y revisados
 
 Carpeta protocolos/ separada para no mezclar
 
-## Bloque 9: Generación de apuntes y recursos
+## Bloque 9: Generación de apuntes y recursos {#bloque-9}
 
 ### Mermaid para diagramas
 
@@ -434,7 +451,7 @@ Git/GitHub es potente, pero cuando surge un conflicto serio, incluso técnicos s
 
 La IA puede ayudar, pero hay complejidad real
 
-## Bloque 10: Reutilización del contenido en múltiples formatos
+## Bloque 10: Reutilización del contenido en múltiples formatos {#bloque-10}
 
 El núcleo del enfoque es que el contenido se escribe una sola vez y se reutiliza para distintos fines.
 
@@ -445,7 +462,7 @@ El núcleo del enfoque es que el contenido se escribe una sola vez y se reutiliz
 | Presentaciones | Reveal.js: una idea por diapositiva, estructura jerárquica. Para clases presenciales, exposiciones |
 | PDF | Se genera a partir de web o presentación. Para impresión, entrega formal |
 
-## Bloque 11: Web de apuntes con Docusaurus
+## Bloque 11: Web de apuntes con Docusaurus {#bloque-11}
 
 Docusaurus resuelve un problema concreto: 'Tengo muchos apuntes y quiero que se lean como un sitio web ordenado.'
 
@@ -487,7 +504,7 @@ El alumnado ve siempre la versión vigente
 
 El docente corrige una vez y se refleja en todo
 
-## Bloque 12: Presentaciones
+## Bloque 12: Presentaciones {#bloque-12}
 
 ### Opciones tradicionales
 
