@@ -16,8 +16,30 @@ let content = md.replace(/^---[\s\S]*?---\s*/m, '');
 // Remove Docusaurus admonitions like :::tip ... :::
 content = content.replace(/:::[\s\S]*?:::/g, '');
 
-// Remove heading IDs like {#id}
-content = content.replace(/(#{1,6}\\s+.+?)\\s+\\{#[^}]+\\}/g, '$1');
+// Remove custom index HTML block
+const lines = content.split(/\r?\n/);
+const cleaned = [];
+let skipping = false;
+let depth = 0;
+for (const line of lines) {
+  if (!skipping && line.includes('<div className="custom-index">')) {
+    skipping = true;
+    depth = 0;
+  }
+  if (skipping) {
+    if (line.includes('<div')) depth += 1;
+    if (line.includes('</div>')) depth -= 1;
+    if (skipping && depth <= 0 && line.includes('</div>')) {
+      skipping = false;
+    }
+    continue;
+  }
+  cleaned.push(line);
+}
+content = cleaned.join('\n');
+
+// Remove heading IDs like {#id} anywhere
+content = content.replace(/\s*\\{#[^}]+\\}/g, '');
 
 // Create output directory
 fs.mkdirSync(outputDir, { recursive: true });

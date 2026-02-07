@@ -52,6 +52,7 @@ class MarkdownToPDF:
             spaceAfter=12,
             spaceBefore=20,
             fontName='Helvetica-Bold',
+            keepWithNext=True,
             borderPadding=(0, 0, 8, 0),
             borderColor=HexColor('#3498db'),
             borderWidth=0,
@@ -66,7 +67,8 @@ class MarkdownToPDF:
             textColor=HexColor('#34495e'),
             spaceAfter=10,
             spaceBefore=16,
-            fontName='Helvetica-Bold'
+            fontName='Helvetica-Bold',
+            keepWithNext=True
         ))
         
         # Estilo para encabezados H3
@@ -77,7 +79,8 @@ class MarkdownToPDF:
             textColor=HexColor('#566573'),
             spaceAfter=8,
             spaceBefore=12,
-            fontName='Helvetica-Bold'
+            fontName='Helvetica-Bold',
+            keepWithNext=True
         ))
 
         # Estilo para encabezados H4
@@ -88,7 +91,8 @@ class MarkdownToPDF:
             textColor=HexColor('#5f6a6a'),
             spaceAfter=6,
             spaceBefore=10,
-            fontName='Helvetica-Bold'
+            fontName='Helvetica-Bold',
+            keepWithNext=True
         ))
 
         # Estilo para encabezados H5
@@ -99,7 +103,8 @@ class MarkdownToPDF:
             textColor=HexColor('#6e7b7b'),
             spaceAfter=4,
             spaceBefore=8,
-            fontName='Helvetica-Bold'
+            fontName='Helvetica-Bold',
+            keepWithNext=True
         ))
         
         # Estilo para texto normal
@@ -111,7 +116,9 @@ class MarkdownToPDF:
             alignment=TA_JUSTIFY,
             spaceAfter=8,
             spaceBefore=0,
-            leading=14
+            leading=14,
+            allowWidows=0,
+            allowOrphans=0
         ))
         
         # Estilo para código
